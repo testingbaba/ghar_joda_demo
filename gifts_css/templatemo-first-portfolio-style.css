@@ -116,7 +116,7 @@ button {
 }
 
 a {
-  color: var(--p-color);
+  
   text-decoration: none;
 }
 
@@ -135,8 +135,8 @@ a:hover {
 }
 
 .section-padding {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 200px;
+  padding-bottom: 10px;
 }
 
 b,
@@ -623,10 +623,13 @@ strong {
 }
 
 
+
+
+
 /*---------------------------------------
   SERVICES              
 -----------------------------------------*/
-.services,
+/* .services, */
 .featured {
   background: var(--section-bg-color);
   border-top: 1px solid var(--border-color);
@@ -671,6 +674,7 @@ strong {
   height: 55%;
   transform: rotate(-35deg) translateY(55px);
   transition: all ease 0.5s;
+  background-color: #f5a425;
 }
 
 .services-icon {
