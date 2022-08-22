@@ -753,19 +753,10 @@ services
 
 .services {
   
-  margin-top: -135px;
-  position: absolute; 
+  margin-top: -200px;
+  /* position: absolute;  */
   width: 100%;
   
-}
-
-
-.services .h2{
- text-align: center;
- margin: 20px auto;
- color: #fff;
- font-size: 25px;
- font-weight: 600;
 }
 
 
@@ -908,10 +899,8 @@ section.upcoming-meetings {
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-
   background-size: cover; 
   padding-top: 300px;
-
   padding-bottom: 110px;
 }
 
@@ -1132,7 +1121,6 @@ section.apply-now .item p {
 .accordion-button {
   font-size: 18px;
   font-weight: 700;
-
 }
 
 [type=button]:not(:disabled),
