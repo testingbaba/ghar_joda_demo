@@ -23,7 +23,7 @@
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/photoShoots.css">
+    <link rel="stylesheet" href="assets/css/tripe_advisor.css">
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/lightbox.css">
 
@@ -76,8 +76,8 @@
                                 <a href="javascript:void(0)" class="active">Events</a>
                                 <ul class="sub-menu">
                                     <li><a href="#">Gifts</a></li>
-                                  <li><a href="#">Photo Shoots</a></li>
-                                    <li><a href="./tripe_advisor.html">Tripe Advisor</a></li>
+                                  <li><a href="./photo shoots.html">Photo Shoots</a></li>
+                                    <li><a href="#">Tripe Advisor</a></li>
                                     <li><a href="#">Invitation Card Advisor</a></li>
                                 </ul>
                             </li>
@@ -213,7 +213,7 @@
         </div>
     </section>
 
-    <!-- photo shoots section -->
+    <!-- tripe advisor section -->
     <section class="photo-main">
         <div class="container">
             <div class="row">
@@ -243,8 +243,8 @@
         </div>
     </section>
 
-    <!-- photo shoots section 2 -->
-    <section class="photo_shoot section-padding py-5" id="section_4">
+    <!-- tripe advisor 2 -->
+    <section class="tripe_advisor section-padding py-5" id="section_4">
         <div class="container">
             <div class="row">
 
@@ -257,40 +257,40 @@
                 <div class="clearfix"></div>
 
                 <div class="col-lg-4 col-md-6 col-12">
-                    <div class="photo_shoot-thumb">
-                        <div class="photo_shoot-info">
-                            <small class="photo_shoot-tag">Branding</small>
+                    <div data-tilt data-tilt-reverse="true" class="tripe_advisor-thumb">
+                        <div class="tripe_advisor-info">
+                            <small class="tripe_advisor-tag">Branding</small>
 
-                            <h3 class="photo_shoot-title">Zoik agency</h3>
+                            <h3 class="tripe_advisor-title">Zoik agency</h3>
                         </div>
-                            <img src="./assets/images/ghar joda Gifts/1.png" class="photo_shoot-image img-fluid"
+                            <img src="./assets/images/ghar joda Gifts/1.png" class="tripe_advisor-image img-fluid"
                                 alt="">
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-12">
-                    <div class="photo_shoot-thumb">
-                        <div class="photo_shoot-info">
-                            <small class="photo_shoot-tag">Photography</small>
+                    <div data-tilt data-tilt-reverse="true" class="tripe_advisor-thumb">
+                        <div class="tripe_advisor-info">
+                            <small class="tripe_advisor-tag">Photography</small>
 
-                            <h3 class="photo_shoot-title">The Watch</h3>
+                            <h3 class="tripe_advisor-title">The Watch</h3>
                         </div>
-                            <img src="./assets/images/ghar joda Gifts/4.png" class="photo_shoot-image img-fluid"
+                            <img src="./assets/images/ghar joda Gifts/4.png" class="tripe_advisor-image img-fluid"
                                 alt="">
                         </a>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-12">
-                    <div class="photo_shoot-thumb">
-                        <div class="photo_shoot-info">
-                            <small class="photo_shoot-tag">Website</small>
+                    <div data-tilt data-tilt-reverse="true" class="tripe_advisor-thumb">
+                        <div class="tripe_advisor-info">
+                            <small class="tripe_advisor-tag">Website</small>
 
-                            <h3 class="photo_shoot-title">Polo</h3>
+                            <h3 class="tripe_advisor-title">Polo</h3>
                         </div>
 
                             <img src="./assets/images/ghar joda Gifts/5.png"
-                                class="photo_shoot-image img-fluid" alt="">
+                                class="tripe_advisor-image img-fluid" alt="">
                     </div>
                 </div>
 
@@ -494,8 +494,8 @@
                             <ul class="footer-links">
 
                                 <li><a href="#"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Gifts</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Photo Shoots</a></li>
-                                <li><a href="./tripe_advisor.html"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Tripe Advisor</a></li>
+                                <li><a href="./photo shoots.html"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Photo Shoots</a></li>
+                                <li><a href="#"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Tripe Advisor</a></li>
                                 <li><a href="#"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Invitation Card
                                         Advisor</a></li>
                             </ul>
@@ -563,6 +563,16 @@
     <script src="assets/js/video.js"></script>
     <script src="assets/js/slick-slider.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".tripe_advisor-thumb"), {
+            max: 25,
+            speed: 400
+        });
+        
+        //It also supports NodeList
+        VanillaTilt.init(document.querySelectorAll(".tripe_advisor-thumb"));
+    </script>
     <script>
         //according to loftblog tut
         $('.nav li:first').addClass('active');

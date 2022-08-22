@@ -936,15 +936,15 @@ services
 }
 
 /*---------------------------------------
-  photo_shoot              
+  tripe_advisor              
 -----------------------------------------*/
-.photo_shoot{
+.tripe_advisor{
   background-image: url(../images/meetings-bg.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.photo_shoot-thumb {
+.tripe_advisor-thumb {
   background-color: rgba(250,250,250,0.15);
   border-radius: 10px;
   border: 1px solid rgba(250,250,250,0.15);
@@ -956,48 +956,48 @@ services
   transition: all ease 0.5s;
 }
 
-.photo_shoot-thumb:hover {
+.tripe_advisor-thumb:hover {
   border-color: #d68400;
 }
 
-.photo_shoot-thumb:hover .photo_shoot-image,
-.photo_shoot-thumb:focus .photo_shoot-image {
+/* .tripe_advisor-thumb:hover .tripe_advisor-image,
+.tripe_advisor-thumb:focus .tripe_advisor-image {
   transform: rotate(0) translateY(0);
-}
+} */
 
-.photo_shoot-thumb .popup-image {
+.tripe_advisor-thumb .popup-image {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-.photo_shoot-image {
+.tripe_advisor-image {
   border-radius: 10px;
   display: block;
   width: 100%;
   height: 250px;
   object-fit: cover;
-  transform: rotate(10deg) translateY(80px);
+  transform: rotate(10deg) translateY(50px);
   transition: all ease 0.5s;
 }
-.photo_shoot .section-title-wrap {
+.tripe_advisor .section-title-wrap {
   background-color: #d68400;
   color: white;
   border-radius: 20px;
 }
 
-.photo_shoot .section-title-wrap p{
+.tripe_advisor .section-title-wrap p{
   font-size: 40px;
   padding: 10px 0px;
   font-weight: 500;
 }
 
-.photo_shoot-title {
+.tripe_advisor-title {
   margin-bottom: 30px;
   color: white;
 }
 
-.photo_shoot-tag {
+.tripe_advisor-tag {
   font-size: 12px;
   font-weight: 600;
   color: #d68400;
