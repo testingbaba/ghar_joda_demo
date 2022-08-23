@@ -314,5 +314,4 @@
         }
     })
 
-
 })(window.jQuery);
