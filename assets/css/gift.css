@@ -16,10 +16,10 @@
     --h1-font-size:                 62px;
     --h2-font-size:                 48px;
     --h3-font-size:                 36px;
-    --h4-font-size:                 32px;
+    /* --h4-font-size:                 32px; */
     --h5-font-size:                 24px;
     --h6-font-size:                 22px;
-    --p-font-size:                  18px;
+    /* --p-font-size:                  18px; */
     --menu-font-size:               12px;
     --copyright-font-size:          14px;
   
@@ -879,7 +879,7 @@
   /*---------------------------------------
     SITE FOOTER              
   -----------------------------------------*/
-  .site-footer {
+  /* .site-footer {
     border-top: 1px solid var(--border-color);
     padding-top: 50px;
     padding-bottom: 50px;
@@ -936,7 +936,7 @@
     background: var(--secondary-color);
     border-color: transparent;
     color: var(--white-color);
-  }
+  } */
   
   
   /*---------------------------------------
