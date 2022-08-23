@@ -1183,19 +1183,23 @@ section.contact-us .right-info ul li span {
 }
 
 .social-icons a.facebook:hover {
-  background-color: #00aced
+  background-color: white;
+  color: black;
 }
 
 .social-icons a.twitter:hover {
-  background-color: #00aced
+  background-color: white;
+  color: black;
 }
 
 .social-icons a.instagram:hover {
-  background-color: #00aced
+  background-color: white;
+  color: black;
 }
 
 .social-icons a.dribbble:hover {
-  background-color: #ea4c89
+  background-color: white;
+  color: black;
 }
 
 
@@ -1223,8 +1227,20 @@ section.contact-us .right-info ul li span {
 }
 
 
-.footer p a {
+.footer-dwon p a {
   color: #f5a425;
+}
+
+.footer-dwon{
+  text-align: center;
+  padding: 15px 0px;
+  background-color: #191a20;
+}
+
+.footer-dwon p {
+  /* text-transform: uppercase; */
+  font-size: 15px;
+  color: #fff;
 }
 
 
