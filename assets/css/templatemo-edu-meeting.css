@@ -1312,15 +1312,6 @@ our facts
 ---------------------------------------------
 */
 
-section.webbranding {
-  background-image: url(../images/meetings-bg.jpg);
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 1500px 0px 125px 0px;
-}
-
 
 section.our-facts {
   background-image: url(../images/facts-bg.png);
@@ -1328,7 +1319,6 @@ section.our-facts {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 150px 0px 125px 0px;
 }
 
 section.our-facts h2 {
@@ -1371,7 +1361,6 @@ section.our-facts h2 {
 }
 
 section.our-facts .video {
-  
   text-align: center;
   margin-left: 70px;
   background-image: url(../images/video-item-bg.png);
