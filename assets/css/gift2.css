@@ -753,19 +753,10 @@ services
 
 .services {
   
-  margin-top: -135px;
-  position: absolute; 
+  margin-top: -200px;
+  /* position: absolute;  */
   width: 100%;
   
-}
-
-
-.services .h2{
- text-align: center;
- margin: 20px auto;
- color: #fff;
- font-size: 25px;
- font-weight: 600;
 }
 
 
@@ -908,9 +899,8 @@ section.upcoming-meetings {
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-
+  background-size: cover; 
   padding-top: 300px;
-
   padding-bottom: 110px;
 }
 
@@ -1131,7 +1121,6 @@ section.apply-now .item p {
 .accordion-button {
   font-size: 18px;
   font-weight: 700;
-
 }
 
 [type=button]:not(:disabled),
@@ -1311,6 +1300,15 @@ our facts
 ---------------------------------------------
 */
 
+section.webbranding {
+  background-image: url(../images/meetings-bg.jpg);
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 1500px 0px 125px 0px;
+}
+
 
 section.our-facts {
   background-image: url(../images/facts-bg.png);
@@ -1318,7 +1316,7 @@ section.our-facts {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-
+  padding: 150px 0px 125px 0px;
 }
 
 section.our-facts h2 {
@@ -1361,7 +1359,7 @@ section.our-facts h2 {
 }
 
 section.our-facts .video {
-
+  
   text-align: center;
   margin-left: 70px;
   background-image: url(../images/video-item-bg.png);
