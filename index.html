@@ -79,7 +79,9 @@
 
 
 
+
               <li ><a href="#top" class="active">Home</a></li>
+
               <li><a href="./about_us.html">About Us</a></li>
 
               <li ><a href="#apply">Couple</a></li>
@@ -94,7 +96,7 @@
                   <li><a href="./tripe_advisor.html">Trip Advisor</a></li>
 
 
-                  <li><a href="#">Invitation Card Advisor</a></li>
+                  <li><a href="./invitationCard.html">Invitation Card Advisor</a></li>
                 </ul>
               </li>
 
@@ -265,7 +267,9 @@
               <li><a href="./photo_shoots.html">Photo Shoots</a></li><br>
               <li><a href="./tripe_advisor.html">Trip Advisor</a></li><br>
 
-              <li><a href="#">Invitation Card Advisor</a></li><br>
+
+              <li><a href="./invitationCard.html">Invitation Card Advisor</a></li><br>
+
             </ul>
 
             <div class="main-button-red mt-2">
@@ -370,7 +374,7 @@
                     blandit lectus cursus ullamcorper.</p>
                   <div class="main-button-red mt-2">
 
-                    <a href="#">Apply Now</a>
+                    <a href="./invitationCard.html">Apply Now</a>
                   </div>
 
                 </div>
@@ -933,7 +937,9 @@
                 <li><a href="./tripe_advisor.html"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Trip Advisor</a></li>
 
 
-                <li><a href="#"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Invitation Card Advisor</a></li>
+
+                <li><a href="./invitationCard.html"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Invitation Card Advisor</a></li>
+
               </ul>
             </div>
             <div class="col-xs-6 col-md-3">
@@ -1042,14 +1048,15 @@
       });
     };
 
-    // $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
-    //   e.preventDefault();
-    //   showSection($(this).attr('href'), true);
-    // });
+    $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+      e.preventDefault();
+      showSection($(this).attr('href'), true);
+    });
 
     $(window).scroll(function () {
       checkSection();
     });
+
   </script>
 
   <!-- Header scrolling-->
@@ -1156,6 +1163,7 @@
 			return false;
 		});
 });
+
   </script>
 
   

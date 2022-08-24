@@ -1126,7 +1126,7 @@ section.apply-now .item p {
   border-radius: 20px;
   padding: 40px;
   background-color: #fff;
-  margin-left: 45px;
+  /* margin-left: 45px; */
 }
 
 .accordion-button {
@@ -1329,6 +1329,7 @@ section.our-facts {
   background-repeat: no-repeat;
   background-size: cover;
 
+  padding: 140px 0px 125px 0px;
 
 }
 

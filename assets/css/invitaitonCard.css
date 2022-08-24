@@ -981,11 +981,11 @@ services
 
 /* 
 ---------------------------------------
-  gift card section  
+  invitation card section  
 ---------------------------------------
 */
 
-.gift-main {
+.invitation-main {
     background-image: url(../images/meetings-bg.jpg);
     background-position: center center;
     background-attachment: fixed;
@@ -994,14 +994,14 @@ services
     padding: 300px 0px 50px 0px;
 }
 
-.gift,
+.invitation,
 .featured {
     background: #f9f9f9;
     border-top: 1px solid #e9eaeb;
     border-bottom: 1px solid #e9eaeb;
 }
 
-.gift-thumb {
+.invitation-thumb {
     background: #ffffff;
     border: 2px solid transparent;
     border-radius: 20px;
@@ -1012,24 +1012,24 @@ services
     transition: all 0.5s;
 }
 
-.gift-thumb-up {
+.invitation-thumb-up {
     position: relative;
     bottom: 50px;
     margin-bottom: -50px;
 }
 
-.gift-thumb:hover {
+.invitation-thumb:hover {
     border: 2px solid #a12c2f;
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
 }
 
-.gift-thumb:hover .gift-icon-wrap {
+.invitation-thumb:hover .invitation-icon-wrap {
     background: #a12c2f;
     border-color: #a12c2f;
     color: #ffffff;
 }
 
-.gift-icon-wrap {
+.invitation-icon-wrap {
     background-color: #f5a425;
     border: 1px solid #e9eaeb;
     border-radius: 10px;
@@ -1042,21 +1042,21 @@ services
     transition: all ease 0.5s;
 }
 
-.gift-icon {
+.invitation-icon {
     font-size: 90px;
     position: relative;
     bottom: 15px;
 }
 
-.gift-thumb:hover .gift-price-wrap {
+.invitation-thumb:hover .invitation-price-wrap {
     background: #a12c2f;
 }
 
-.gift-thumb:hover .gift-price-overlay {
+.invitation-thumb:hover .invitation-price-overlay {
     background: #f5a425;
 }
 
-.gift-price-wrap {
+.invitation-price-wrap {
     background: #f5a425;
     border-radius: 20px;
     position: relative;
@@ -1065,13 +1065,13 @@ services
     transition: all ease 0.5s;
 }
 
-.gift-price-text {
+.invitation-price-text {
     color: #ffffff;
     font-size: 14px;
     font-weight: 700;
 }
 
-.gift-price-overlay {
+.invitation-price-overlay {
     background: #a12c2f;
     border-bottom-left-radius: 100%;
     position: absolute;
@@ -1117,7 +1117,7 @@ services
 }
 
 @media screen and (max-width: 990px) {
-    .gift-main {
+    .invitation-main {
         background-image: url(../images/meetings-bg.jpg);
         background-position: center center;
         background-attachment: fixed;
@@ -1127,7 +1127,7 @@ services
         margin-top: -20px;
     }
 
-    .gift-thumb {
+    .invitation-thumb {
         background: #ffffff;
         border: 2px solid transparent;
         border-radius: 20px;
@@ -1138,7 +1138,7 @@ services
         transition: all 0.5s;
     }
 
-    .gift-thumb-up {
+    .invitation-thumb-up {
         position: relative;
         bottom: 50px;
         margin-bottom: -50px;
@@ -1613,7 +1613,6 @@ section.meetings-page .pagination ul li a:hover {
     width: 80px;
     height: 80px;
     text-align: center;
-
     padding: 15px 0px;
     border-radius: 10px;
     right: 20px;
@@ -1868,22 +1867,3 @@ responsive
     background-color: #d68400;
     color: white;
 }
-
-
-  /*
----------------------------------
-   Scrolling Up
-------------------------------
-*/
-.back-to-top {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  display: none;
-  border-radius: 50px;
-  z-index: 100;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-  
-  
-
