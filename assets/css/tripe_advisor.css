@@ -1712,3 +1712,17 @@ responsive
   color: white;
 }
 
+/*
+---------------------------------
+   Scrolling Up
+------------------------------
+*/
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  border-radius: 50px;
+  z-index: 100;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
