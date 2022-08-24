@@ -77,14 +77,18 @@
                             <li class="has-sub">
                                 <a href="javascript:void(0)">Events</a>
                                 <ul class="sub-menu">
-                                    <li><a href="#">Gifts</a></li>
+
+                                    <li><a href="./gift.html">Gifts</a></li>
+
                                     <li><a href="./photo_shoots.html">Photo Shoots</a></li>
                                     <li><a href="./tripe_advisor.html">trip advisor</a></li>
                                     <li><a href="#">Invitation Card Advisor</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">Galary</a></li>
-                            <li><a href="#">Contact Us</a></li>
+
+                            <li><a href="#contact">Contact Us</a></li>
+
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -124,7 +128,7 @@
 
 
                             <div class="main-button-red">
-                                <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
+                                <div><a href="#contact">Join Us Now!</a></div>
                             </div>
                         </div>
                     </div>
@@ -419,21 +423,20 @@
             </div> -->
 
                         <div class="col-xs-6 col-md-3">
-                            <h4 style="color:white; text-align: center;">Company</h4>
+                            <h4 style="color:white;">Company</h4>
                             <hr style="color:white">
                             <ul class="footer-links">
                                 <li><a href="index.html"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Home</a></li>
                                 <li><a href="#"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;About Us</a></li>
                                 <li><a href="./cuple.html"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Couple</a></li>
-                                <li><a href="./event.html"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Events</a></li>
                                 <li><a href="#"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Membership</a></li>
                                 <li><a href="./gallery.html"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Gallery</a>
                                 </li>
-                                <li><a href="#rsvp"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Contect Us</a></li>
+                                <li><a href="#contact"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Contact Us</a></li>
                             </ul>
                         </div>
                         <div class="col-xs-6 col-md-3">
-                            <h4 style="color:white; text-align: center;">Privacy & You</h4>
+                            <h4 style="color:white;">Privacy & You</h4>
                             <hr style="color:white">
                             <ul class="footer-links">
                                 <li><a href="#"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Terms of Use</a></li>
@@ -444,11 +447,12 @@
                         </div>
 
                         <div class="col-xs-6 col-md-3">
-                            <h4 style="color:white; text-align: center;">Events</h4>
+                            <h4 style="color:white;">Events</h4>
                             <hr style="color:white">
                             <ul class="footer-links">
 
-                                <li><a href="#"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Gifts</a></li>
+                                <li><a href="./gift.html"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Gifts</a></li>
+
                                 <li><a href="./photo_shoots.html"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Photo
                                         Shoots</a></li>
                                 <li><a href="./tripe_advisor.html"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;trip
@@ -458,7 +462,7 @@
                             </ul>
                         </div>
                         <div class="col-xs-6 col-md-3">
-                            <h4 style="color:white; text-align: center; ">Follow Us</h4>
+                            <h4 style="color:white; ">Follow Us</h4>
                             <hr style="color:white">
                             <div class="soi mt-4">
                                 <p href="#"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>&nbsp; &nbsp;
@@ -501,6 +505,9 @@
     
         </div> -->
             </footer>
+        </div>
+        <div class="footer-dwon">
+            <p>Copyright © 2022 Ghar Joda . All Rights Reserved. by <a href="https://www.testingbaba.com/" target="_blank">testing Baba</a></p>
         </div>
     </section>
 
@@ -559,10 +566,10 @@
             });
         };
 
-        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
-            e.preventDefault();
-            showSection($(this).attr('href'), true);
-        });
+        // $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+        //     e.preventDefault();
+        //     showSection($(this).attr('href'), true);
+        // });
 
         $(window).scroll(function () {
             checkSection();
