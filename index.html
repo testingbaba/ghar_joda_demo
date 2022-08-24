@@ -32,7 +32,7 @@
 </head>
 
 <body>
-
+  <section  id="top">
   <!-- Sub Header -->
   <div class="sub-header">
     <div class="container">
@@ -79,7 +79,9 @@
 
 
 
-              <li ><a href="#" class="active">Home</a></li>
+
+              <li ><a href="#top" class="active">Home</a></li>
+
               <li><a href="./about_us.html">About Us</a></li>
 
               <li ><a href="#apply">Couple</a></li>
@@ -114,9 +116,9 @@
     </div>
   </header>
   <!-- ***** Header Area End ***** -->
-
+  
   <!-- ***** Main Banner Area Start ***** -->
-  <section class="section main-banner" id="top" data-section="section1">
+  <section class="section main-banner" data-section="section1">
     <video autoplay muted loop id="bg-video">
 
       <source src="assets/videos/v1.mp4" type="video/mp4" />
@@ -265,7 +267,9 @@
               <li><a href="./photo_shoots.html">Photo Shoots</a></li><br>
               <li><a href="./tripe_advisor.html">Trip Advisor</a></li><br>
 
+
               <li><a href="./invitationCard.html">Invitation Card Advisor</a></li><br>
+
             </ul>
 
             <div class="main-button-red mt-2">
@@ -767,7 +771,9 @@
       </div>
     </div>
   </section>
-
+  </section>
+   
+  <!--Contact Us-->
   <section class="contact-us" id="contact">
     <div class="container">
       <div class="row">
@@ -931,7 +937,9 @@
                 <li><a href="./tripe_advisor.html"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Trip Advisor</a></li>
 
 
+
                 <li><a href="./invitationCard.html"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Invitation Card Advisor</a></li>
+
               </ul>
             </div>
             <div class="col-xs-6 col-md-3">
@@ -985,7 +993,8 @@
   </section>
 
 
-
+  <!--Scrolling up button-->
+  <a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fa fa-chevron-up"></i></a>
 
 
 
@@ -1047,7 +1056,117 @@
     $(window).scroll(function () {
       checkSection();
     });
+
   </script>
+
+  <!-- Header scrolling-->
+  <script>
+    // cache the navigation links 
+    var $navigationLinks = document.querySelectorAll('nav > ul > li > a');
+    // cache (in reversed order) the sections
+    var $sections = document.getElementsByTagName('section');
+
+    // map each section id to their corresponding navigation link
+    var sectionIdTonavigationLink = {};
+    for (var i = $sections.length - 1; i >= 0; i--) {
+        var id = $sections[i].id;
+        sectionIdTonavigationLink[id] = document.querySelectorAll('nav > ul > li > a[href=\\#' + id + ']') || null;
+    }
+
+    // throttle function, enforces a minimum time interval
+    function throttle(fn, interval) {
+        var lastCall, timeoutId;
+        return function () {
+            var now = new Date().getTime();
+            if (lastCall && now < (lastCall + interval)) {
+                // if we are inside the interval we wait
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(function () {
+                    lastCall = now;
+                    fn.call();
+                }, interval - (now - lastCall));
+            } else {
+                // otherwise, we directly call the function 
+                lastCall = now;
+                fn.call();
+            }
+        };
+    }
+
+    function getOffset(el) {
+        var _x = 0;
+        var _y = 0;
+        while (el && !isNaN(el.offsetLeft) && !isNaN(el.offsetTop)) {
+            _x += el.offsetLeft - el.scrollLeft;
+            _y += el.offsetTop - el.scrollTop;
+            el = el.offsetParent;
+        }
+        return { top: _y, left: _x };
+    }
+
+    function highlightNavigation() {
+        // get the current vertical position of the scroll bar
+        var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+        // iterate the sections
+        for (var i = $sections.length - 1; i >= 0; i--) {
+            var currentSection = $sections[i];
+            // get the position of the section
+            var sectionTop = getOffset(currentSection).top;
+
+            // if the user has scrolled over the top of the section  
+            if (scrollPosition >= sectionTop - 250) {
+                // get the section id
+                var id = currentSection.id;
+                // get the corresponding navigation link
+                var $navigationLink = sectionIdTonavigationLink[id];
+                // if the link is not active
+                if (typeof $navigationLink[0] !== 'undefined') {
+                    if (!$navigationLink[0].classList.contains('active')) {
+                        // remove .active class from all the links
+                        for (i = 0; i < $navigationLinks.length; i++) {
+                            $navigationLinks[i].className = $navigationLinks[i].className.replace(/ active/, '');
+                        }
+                        // add .active class to the current link
+                        $navigationLink[0].className += (' active');
+                    }
+                } else {
+                    // remove .active class from all the links
+                    for (i = 0; i < $navigationLinks.length; i++) {
+                        $navigationLinks[i].className = $navigationLinks[i].className.replace(/ active/, '');
+                    }
+                }
+                // we have found our section, so we return false to exit the each loop
+                return false;
+            }
+        }
+    }
+
+    window.addEventListener('scroll', throttle(highlightNavigation, 150));
+  </script>
+
+  <!--scrolling up -->
+  <script>
+    $(document).ready(function(){
+	$(window).scroll(function () {
+			if ($(this).scrollTop() > 50) {
+				$('#back-to-top').fadeIn();
+			} else {
+				$('#back-to-top').fadeOut();
+			}
+		});
+		// scroll body to 0px on click
+		$('#back-to-top').click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 400);
+			return false;
+		});
+});
+
+  </script>
+
+  
 </body>
 
 </body>
