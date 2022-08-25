@@ -81,7 +81,7 @@
                                     <li><a href="./gift.html">Gifts</a></li>
                                     <li><a href="#">Photo Shoots</a></li>
                                     <li><a href="./tripe_advisor.html">Trip Advisor</a></li>
-                                    <li><a href="#">Invitation Card Advisor</a></li>
+                                    <li><a href="./invitationCard.html">Invitation Card Advisor</a></li>
                                 </ul>
                             </li>
                             <li><a href="#">Galary</a></li>
@@ -140,14 +140,14 @@
                             <div class="icon">
                                 <!-- <i class="fa-solid fa-menorah"></i> -->
                             </div>
-                            <div class="down-content">
+                            <div class="down-content" >
                                 <h4>Religion</h4>
                                 <p class="mb-3 matrimonial">
                                     <a href="#">Hindu</a> |
                                     <a href="#">Muslim</a> |
                                     <a href="#">Christian</a> |
                                     <a href="#">Sikha</a> |
-                                    <a href="#">Budhist</a> |
+                                    <a href="#">Budhist</a> <br>|
                                     <a href="#">Jain</a>
                                 </p>
                                 <a href="#" class="btn-read">Read More</a>
@@ -240,7 +240,7 @@
                                 The best thing about a picture is that it never changes, even when the people in it do.
                                 Taking pictures is savoring life intensely, every hundredth of a second.</p>
 
-                            <h2 class="me-4 mb-0 font-weight-bold">Photo Shoots</h2>
+                            <h2 class="me-4 mb-0 font-weight-bold"></h2>
                         </div>
                 </div>
                     </div>
@@ -508,7 +508,7 @@
                                 <li><a href="#"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Photo Shoots</a></li>
                                 <li><a href="./tripe_advisor.html"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Trip
                                         Advisor</a></li>
-                                <li><a href="#"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Invitation Card
+                                <li><a href="./invitationCard.html"><i class="fa fa-caret-right"></i>&nbsp; &nbsp;Invitation Card
                                         Advisor</a></li>
                             </ul>
                         </div>
@@ -563,6 +563,8 @@
         </div>
     </section>
 
+<!--Scrolling up button-->
+<a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fa fa-chevron-up"></i></a>
 
 
 
@@ -627,6 +629,26 @@
             checkSection();
         });
     </script>
+
+    <!--scrolling up -->
+  <script>
+    $(document).ready(function(){
+	$(window).scroll(function () {
+			if ($(this).scrollTop() > 50) {
+				$('#back-to-top').fadeIn();
+			} else {
+				$('#back-to-top').fadeOut();
+			}
+		});
+		// scroll body to 0px on click
+		$('#back-to-top').click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 400);
+			return false;
+		});
+});
+  </script>
 </body>
 
 </body>

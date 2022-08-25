@@ -1,3 +1,28 @@
+/*
+
+TemplateMo 569 Edu Meeting
+
+https://templatemo.com/tm-569-edu-meeting
+
+*/
+
+/* ---------------------------------------------
+Table of contents
+------------------------------------------------
+01. font & reset css
+02. reset
+03. global styles
+04. header
+05. banner
+06. features
+07. testimonials
+08. contact
+09. footer
+10. preloader
+11. search
+12. portfolio
+
+--------------------------------------------- */
 /* 
 ---------------------------------------------
 font & reset css
@@ -752,20 +777,9 @@ services
 */
 
 .services {
-  
   margin-top: -135px;
-  position: absolute; 
+  position: absolute;
   width: 100%;
-  
-}
-
-
-.services .h2{
- text-align: center;
- margin: 20px auto;
- color: #fff;
- font-size: 25px;
- font-weight: 600;
 }
 
 
@@ -908,8 +922,8 @@ section.upcoming-meetings {
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
+  background-size: cover;
 
-  background-size: cover; 
   padding-top: 300px;
 
   padding-bottom: 110px;
@@ -1132,7 +1146,6 @@ section.apply-now .item p {
 .accordion-button {
   font-size: 18px;
   font-weight: 700;
-
 }
 
 [type=button]:not(:disabled),
@@ -1312,24 +1325,13 @@ our facts
 ---------------------------------------------
 */
 
-section.webbranding {
-  background-image: url(../images/meetings-bg.jpg);
-  background-position: center center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 1500px 0px 125px 0px;
-}
-
-
 section.our-facts {
   background-image: url(../images/facts-bg.png);
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-
-
+  padding: 140px 0px 125px 0px;
 }
 
 section.our-facts h2 {
@@ -1372,7 +1374,6 @@ section.our-facts h2 {
 }
 
 section.our-facts .video {
-
   text-align: center;
   margin-left: 70px;
   background-image: url(../images/video-item-bg.png);
@@ -1565,23 +1566,19 @@ section.contact-us .right-info ul li span {
 }
 
 .social-icons a.facebook:hover {
-  background-color: white;
-  color: black;
+  background-color: #00aced
 }
 
 .social-icons a.twitter:hover {
-  background-color: white;
-  color: black;
+  background-color: #00aced
 }
 
 .social-icons a.instagram:hover {
-  background-color: white;
-  color: black;
+  background-color: #00aced
 }
 
 .social-icons a.dribbble:hover {
-  background-color: white;
-  color: black;
+  background-color: #ea4c89
 }
 
 
@@ -1609,20 +1606,8 @@ section.contact-us .right-info ul li span {
 }
 
 
-.footer-dwon p a {
+.footer p a {
   color: #f5a425;
-}
-
-.footer-dwon{
-  text-align: center;
-  padding: 15px 0px;
-  background-color: #191a20;
-}
-
-.footer-dwon p {
-  /* text-transform: uppercase; */
-  font-size: 15px;
-  color: #fff;
 }
 
 
