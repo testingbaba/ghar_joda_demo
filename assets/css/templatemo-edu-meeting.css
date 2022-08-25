@@ -1140,7 +1140,7 @@ section.apply-now .item p {
   border-radius: 20px;
   padding: 40px;
   background-color: #fff;
-  margin-left: 45px;
+  /* margin-left: 45px; */
 }
 
 .accordion-button {
@@ -1331,7 +1331,11 @@ section.our-facts {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+
+
   padding: 140px 0px 125px 0px;
+
+
 }
 
 section.our-facts h2 {
@@ -2009,3 +2013,17 @@ responsive
   color: white;
 }
 
+/*
+---------------------------------
+   Scrolling Up
+------------------------------
+*/
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  border-radius: 50px;
+  z-index: 100;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
