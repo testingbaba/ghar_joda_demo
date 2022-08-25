@@ -753,19 +753,10 @@ services
 
 .services {
   
-  margin-top: -135px;
-  position: absolute; 
+  margin-top: -200px;
+  /* position: absolute;  */
   width: 100%;
   
-}
-
-
-.services .h2{
- text-align: center;
- margin: 20px auto;
- color: #fff;
- font-size: 25px;
- font-weight: 600;
 }
 
 
@@ -803,6 +794,7 @@ services
   margin-bottom: 15px;
   font-size: 18px;
   font-weight: 600;
+  color: white;
 
   text-transform: uppercase;
 
@@ -908,10 +900,8 @@ section.upcoming-meetings {
   background-position: center center;
   background-attachment: fixed;
   background-repeat: no-repeat;
-
   background-size: cover; 
   padding-top: 300px;
-
   padding-bottom: 110px;
 }
 
@@ -1000,7 +990,7 @@ section.upcoming-meetings .categories .main-button-red a {
 }
 
 .meeting-item .down-content .date {
-
+  float: left;
   text-align: center;
   display: inline-block;
   margin-right: 20px;
@@ -1132,7 +1122,6 @@ section.apply-now .item p {
 .accordion-button {
   font-size: 18px;
   font-weight: 700;
-
 }
 
 [type=button]:not(:disabled),
@@ -1579,67 +1568,9 @@ section.contact-us .right-info ul li span {
   background-color: #ea4c89
 }
 
-/*privacy*/
 
-.container my-4{
-  margin-top: 50%;
-}
 
-.mb-0{
-  color: #eee;
-}
-.card-header{
-  background-color: #a12c2f
-}
-.ans_box{
-  background-color: rgb(63, 59, 59);
-}
-.card-body{
-  background-color: rgb(63, 59, 59);
-}
 
-.notch{
-  color: white;
-  text-decoration: dashed;
-  
-  margin: auto;
-}
-.list_disc{
-  color: white;
-  text-decoration: dashed;
-  padding: 40px;
-  margin: auto;
-}
-.follow{
-  color: #d68400;
-  padding: 20px;
-}
-.link{
-  color:#d68400
-}
-
-/*Login Form*/
-.modal-title{
-  margin-top: 20px;
-}
-.request_tab {
-  font-size: 13px;
-  color: #fff;
-  background-color: #a12c2f;
-  padding: 12px 30px;
-  display: inline-block;
-  border-radius: 22px;
-  font-weight: 500;
-  text-transform: uppercase;
-  transition: all .3s;
-  border-color: #a12c2f;
-  border: hidden;
-}
-.main-button-red{
-  border-color: #a12c2f;
-}
-
-/*End login*/
 
 
 
