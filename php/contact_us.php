@@ -80,7 +80,7 @@ try {
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('info@testingbaba.com', 'Testing Baba - Contact Us');
+    $mail->setFrom('info@testingbaba.com', 'Ghar Joda - Contact Us');
     $mail->addAddress('info@testingbaba.com');     //Add a recipient
   //  $mail->addAddress('ellen@example.com');               //Name is optional
   //  $mail->addReplyTo('info@example.com', 'Information');
@@ -93,14 +93,14 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Contact Us';
+    $mail->Subject = 'Enquery Now -Ghar Joda';
     $mail->Body    = "Name: $name <br>Email: $email<br>Subject: $subject<br>Message: $message ";
  //   $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
     echo "<script type='text/javascript'>alert('Thank You For Submitting Your Query! We Will Get Back To You Soon');</script>";
 
-    echo "<script>window.location='index.html'</script>";
+    echo "<script>window.location='http://localhost/ghar_joda/'</script>";
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
