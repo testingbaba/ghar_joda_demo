@@ -56,36 +56,6 @@
         </div>
     </div>
 
-  </header>
-  <!-- ***** Header Area End ***** -->
-
-  <!-- ***** Main Banner Area Start ***** -->
-  <section class="section main-banner" id="top" data-section="section1">
-    <video autoplay muted loop id="bg-video">
-
-      <source src="assets/videos/v1.mp4" type="video/mp4" />
-
-    </video>
-
-    <div class="video-overlay header-text">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="caption">
-
-              <h6>Hello Youth</h6>
-              <h2>Welcome to Ghar Joda</h2>
-              <p> Gharjodha is the process by which two people make their relationship public, official,
-                and permanent. It is the joining of two people in a bond.
-                <a rel="nofollow" href="https://templatemo.com/page/1" target="_blank">Gharjodha does
-                    more than change
-                    people’s living situation and daily routines.</a>
-                <a rel="nofollow" href="https://www.pexels.com/@pressmaster" target="_blank">Gharjodha
-                    brings great joy to many but it also brings challenges.</a>.
-            </p>
-
-
-
     <!-- ***** Header Area Start ***** -->
     <header class="header-area header-sticky">
         <div class="container">
@@ -113,7 +83,7 @@
                                     <li><a href="./invitationCard.html">invitation Card Advisor</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Galary</a></li>
+                            <li><a href="./gallery.html">Gallery</a></li>
 
                             <li><a href="#contact">Contact Us</a></li>
                         </ul>
@@ -146,11 +116,10 @@
                             <h2>Welcome to Ghar Joda</h2>
                             <p> Gharjodha is the process by which two people make their relationship public, official,
                                 and permanent. It is the joining of two people in a bond.
-                                <a rel="nofollow" href="https://templatemo.com/page/1" target="_blank">Gharjodha does
+                                Gharjodha does
                                     more than change
-                                    people’s living situation and daily routines.</a>
-                                <a rel="nofollow" href="https://www.pexels.com/@pressmaster" target="_blank">Gharjodha
-                                    brings great joy to many but it also brings challenges.</a>.
+                                    people’s living situation and daily routines.Gharjodha
+                                    brings great joy to many but it also brings challenges.
                             </p>
 
 
@@ -181,7 +150,9 @@
                                     <a href="#">Muslim</a> |
                                     <a href="#">Christian</a> |
                                     <a href="#">Sikha</a> |
-                                    <a href="#">Budhist</a> |
+
+                                    <a href="#">Budhist</a> <br>|
+
                                     <a href="#">Jain</a>
                                 </p>
                                 <a href="#" class="btn-read">Read More</a>
@@ -272,7 +243,6 @@
                                     </div>
                                 </div>
 
-
                                 <a href="#" class="custom-btn custom-border-btn btn mt-3">Discover More</a>
 
                                 <div class="gift-icon-wrap d-flex justify-content-center align-items-center">
@@ -291,7 +261,6 @@
                                         <div class="gift-price-overlay"></div>
                                     </div>
                                 </div>
-
 
                                 <a href="#" class="custom-btn custom-border-btn btn mt-3">Discover More</a>
 
@@ -312,7 +281,6 @@
                                     </div>
                                 </div>
 
-
                                 <a href="#" class="custom-btn custom-border-btn btn mt-3">Discover More</a>
 
                                 <div class="gift-icon-wrap d-flex justify-content-center align-items-center">
@@ -331,7 +299,6 @@
                                         <div class="gift-price-overlay"></div>
                                     </div>
                                 </div>
-
 
                                 <a href="#" class="custom-btn custom-border-btn btn mt-3">Discover More</a>
 
@@ -604,98 +571,65 @@
 
 
 
+    <!-- Scripts -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  </section>
+    <script src="assets/js/isotope.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/lightbox.js"></script>
+    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/video.js"></script>
+    <script src="assets/js/slick-slider.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
 
+        var showSection = function showSection(section, isAnimate) {
+            var
+                direction = section.replace(/#/, ''),
+                reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+                reqSectionPos = reqSection.offset().top - 0;
 
-<!--Scrolling up button-->
-<a id="back-to-top" href="#" class="btn btn-light btn-lg back-to-top" role="button"><i class="fa fa-chevron-up"></i></a>
+            if (isAnimate) {
+                $('body, html').animate({
+                    scrollTop: reqSectionPos
+                },
+                    800);
+            } else {
+                $('body, html').scrollTop(reqSectionPos);
+            }
 
+        };
 
+        var checkSection = function checkSection() {
+            $('.section').each(function () {
+                var
+                    $this = $(this),
+                    topEdge = $this.offset().top - 80,
+                    bottomEdge = topEdge + $this.height(),
+                    wScroll = $(window).scrollTop();
+                if (topEdge < wScroll && bottomEdge > wScroll) {
+                    var
+                        currentId = $this.data('section'),
+                        reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+                    reqLink.closest('li').addClass('active').
+                        siblings().removeClass('active');
+                }
+            });
+        };
 
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        // $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+        //     e.preventDefault();
+        //     showSection($(this).attr('href'), true);
+        // });
 
-  <script src="assets/js/isotope.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/lightbox.js"></script>
-  <script src="assets/js/tabs.js"></script>
-  <script src="assets/js/video.js"></script>
-  <script src="assets/js/slick-slider.js"></script>
-  <script src="assets/js/custom.js"></script>
-  <script>
-    //according to loftblog tut
-    $('.nav li:first').addClass('active');
-
-    var showSection = function showSection(section, isAnimate) {
-      var
-        direction = section.replace(/#/, ''),
-        reqSection = $('.section').filter('[data-section="' + direction + '"]'),
-        reqSectionPos = reqSection.offset().top - 0;
-
-      if (isAnimate) {
-        $('body, html').animate({
-          scrollTop: reqSectionPos
-        },
-          800);
-      } else {
-        $('body, html').scrollTop(reqSectionPos);
-      }
-
-    };
-
-    var checkSection = function checkSection() {
-      $('.section').each(function () {
-        var
-          $this = $(this),
-          topEdge = $this.offset().top - 80,
-          bottomEdge = topEdge + $this.height(),
-          wScroll = $(window).scrollTop();
-        if (topEdge < wScroll && bottomEdge > wScroll) {
-          var
-            currentId = $this.data('section'),
-            reqLink = $('a').filter('[href*=\\#' + currentId + ']');
-          reqLink.closest('li').addClass('active').
-            siblings().removeClass('active');
-        }
-      });
-    };
-
-
-    // $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
-    //   e.preventDefault();
-    //   showSection($(this).attr('href'), true);
-    // });
-
-
-    $(window).scroll(function () {
-      checkSection();
-    });
-  </script>
-
-<!--scrolling up -->
-<script>
-  $(document).ready(function(){
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 50) {
-      $('#back-to-top').fadeIn();
-    } else {
-      $('#back-to-top').fadeOut();
-    }
-  });
-  // scroll body to 0px on click
-  $('#back-to-top').click(function () {
-    $('body,html').animate({
-      scrollTop: 0
-    }, 400);
-    return false;
-  });
-});
-</script>
-
-
+        $(window).scroll(function () {
+            checkSection();
+        });
+    </script>
 </body>
 
 </body>

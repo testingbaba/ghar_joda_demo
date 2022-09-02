@@ -926,7 +926,7 @@ section.upcoming-meetings {
 
   padding-top: 300px;
 
-  padding-bottom: 110px;
+  /* padding-bottom: 110px; */
 }
 
 section.upcoming-meetings .section-heading {
