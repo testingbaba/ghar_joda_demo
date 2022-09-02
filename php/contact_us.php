@@ -100,7 +100,9 @@ try {
     $mail->send();
     echo "<script type='text/javascript'>alert('Thank You For Submitting Your Query! We Will Get Back To You Soon');</script>";
 
-    echo "<script>window.location='http://localhost/ghar_joda/'</script>";
+
+    echo "<script>window.location='../index.html'</script>";
+
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
