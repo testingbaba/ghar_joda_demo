@@ -1610,8 +1610,20 @@ section.contact-us .right-info ul li span {
 }
 
 
-.footer p a {
+.footer-dwon p a {
   color: #f5a425;
+}
+
+.footer-dwon{
+  text-align: center;
+  padding: 15px 0px;
+  background-color: #191a20;
+}
+
+.footer-dwon p {
+  /* text-transform: uppercase; */
+  font-size: 15px;
+  color: #fff;
 }
 
 
