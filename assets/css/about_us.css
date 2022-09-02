@@ -1120,6 +1120,9 @@ section.contact-us .right-info ul li span {
 }
 
 
+.footer-links{
+  line-height: 25px;
+}
 
 
 .footer-links a:hover {
@@ -1201,13 +1204,6 @@ section.contact-us .right-info ul li span {
   background-color: white;
   color: black;
 }
-
-
-
-
-
-
-
 
 
 
