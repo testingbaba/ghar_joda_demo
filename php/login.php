@@ -20,7 +20,7 @@
    require('PHPMailer/Exception.php');
    require('PHPMailer/SMTP.php');
    require('PHPMailer/PHPMailer.php');
-   require('database/conn_db.php');
+   require('../database/conn_db.php');
 
    //Session start
    session_start();
