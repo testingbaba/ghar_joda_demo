@@ -31,7 +31,7 @@
    $password=$_POST["pass"];
    
    //Check user is exist in the database
-   $query = "SELECT * FROM `user_reg` WHERE user_email='$email' AND password='" . md5($password) . "'";
+   $query = "SELECT * FROM `user_reg` WHERE user_email='$email' AND password='". md5($password)."'";
    //$result = mysqli_query($con, $query) or die(mysql_error());
    $result = mysqli_query($con, $query);
    $rows = mysqli_num_rows($result);
