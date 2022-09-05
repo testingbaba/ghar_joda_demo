@@ -156,7 +156,7 @@
     </section>
     <!-- ***** Main Banner Area End ***** -->
 
-    <div class="first-div d-none">
+    <div class="first-div d-none" id="reg-login">
       <div class="login-wrap">
         <span class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></span>
         <div class="login-html">
@@ -165,15 +165,15 @@
           <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
           <div class="login-form">
             <div class="sign-in-htm">
-              <form method="post" action="./php/login.php">
+              <form action="./php/login.php" method="post">
                 <div class="group">
                   <label for="user" class="label">User Email</label>
                   <input id="user" type="email" class="input" name="email">
                 </div>
                 <div class="group">
                   <label for="pass" class="label">Password</label>
-                  <input id="pass" type="password" class="input" data-type="password" name="pass"
-                    pattern="^(?:((([^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]'’,\-.\s])){1,}(['’,\-\.]){0,1}){2,}(([^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]'’,\-. ]))*(([ ]+){0,1}(((([^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]'’,\-\.\s])){1,})(['’\-,\.]){0,1}){2,}((([^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]'’,\-\.\s])){2,})?)*)$">
+                  <input id="pass" type="password" class="input" data-type="password" name="pass">
+                    
                 </div>
                 <div class="group">
                   <input id="check" type="checkbox" class="check" checked>
@@ -185,7 +185,7 @@
                 </div>
                 <div class="hr login-hr"></div>
                 <div class="foot-lnk">
-                  <a href="#forgot">Forgot Password?</a>
+                  <a href="php/forgot_password.php">Forgot Password?</a>
                 </div>
               </form>
             </div>

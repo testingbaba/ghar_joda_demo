@@ -22,7 +22,7 @@
    require('PHPMailer/Exception.php');
    require('PHPMailer/SMTP.php');
    require('PHPMailer/PHPMailer.php');
-   require('../database/conn_db.php');
+   include('../database/conn_db.php');
 
    //Get Request from the Registration Page
    extract($_REQUEST);
@@ -53,45 +53,46 @@
 
 
     //Name validation
-    $string_exp = "^(?:((([^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]'’,\-.\s])){1,}(['’,\-\.]){0,1}){2,}(([^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]'’,\-. ]))*(([ ]+){0,1}(((([^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]'’,\-\.\s])){1,})(['’\-,\.]){0,1}){2,}((([^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]'’,\-\.\s])){2,})?)*)$";
-    if (!preg_match($string_exp, $name)) {
-        $error_message .= 'The First Name you entered does not appear to be valid.<br />';
-    }
+    // $string_exp = "^(?:((([^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]'’,\-.\s])){1,}(['’,\-\.]){0,1}){2,}(([^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]'’,\-. ]))*(([ ]+){0,1}(((([^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]'’,\-\.\s])){1,})(['’\-,\.]){0,1}){2,}((([^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]'’,\-\.\s])){2,})?)*)$";
+    // if (!preg_match($string_exp, $name)) {
+    //     $error_message .= 'The First Name you entered does not appear to be valid.<br />';
+    // }
 
     //Email Validation
-    $email_exp = "(?![_.-])((?![_.-][_.-])[a-zA-Z\d_.-]){0,63}[a-zA-Z\d]@((?!-)((?!--)[a-zA-Z\d-]){0,63}[a-zA-Z\d]\.){1,2}([a-zA-Z]{2,14}\.)?[a-zA-Z]{2,14}";
-    if (!preg_match($email_exp, $email)) {
-        $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
-    }
+    // $email_exp = "(?![_.-])((?![_.-][_.-])[a-zA-Z\d_.-]){0,63}[a-zA-Z\d]@((?!-)((?!--)[a-zA-Z\d-]){0,63}[a-zA-Z\d]\.){1,2}([a-zA-Z]{2,14}\.)?[a-zA-Z]{2,14}";
+    // if (!preg_match($email_exp, $email)) {
+    //     $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
+    // }
 
     //Contact Validation
-    $phone_exp="^[1-9]\d{9}$";
-    if(!preg_match($phone_exp,$phone)){
-        $error_message .= "The Contact number you entered does not appear to be valid.<br />";
-    }
+    // $phone_exp="^[1-9]\d{9}$";
+    // if(!preg_match($phone_exp,$phone)){
+    //     $error_message .= "The Contact number you entered does not appear to be valid.<br />";
+    // }
     
     //Password Validation
-    $password_exp="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})";
-    if(!preg_match($password_exp,$pass1)){
-        $error_message .= " The Password must be a minimum of 8 characters including number, Upper, Lower And one special character.<br />";
-    }
+    // $password_exp="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})";
+    // if(!preg_match($password_exp,$pass1)){
+    //     $error_message .= " The Password must be a minimum of 8 characters including number, Upper, Lower And one special character.<br />";
+    // }
 
 
     // When form submitted, insert values into the database.
-    $query= "INSERT into `user_reg` (user_name,user_email,user_contact,password, reg_datatime)
-                     VALUES ('$name', '$email','$phone', '', '" . md5($pass1) . "', '$curDate')";
+    $query= "INSERT into `user_reg` (user_name,user_email,user_contact,password,reg_datatime)
+                     VALUES ('$name','$email','$phone','".md5($pass1)."','$curDate')";
     $result = mysqli_query($con, $query);
-
+  
     //Result for registration
     if ($result) {
         echo "<div class='form'>
-              <h3>You are registered successfully.</h3><br/>
-              <p class='link'>Click here to <a href='login.php'>Login</a></p>
+              alert(<h3>You are registered successfully.</h3>)<br>
+              <p class='link'>Click here to <a href='../index.html'>Login</a></p>
               </div>";
-    } else {
+    } 
+    else {
         echo "<div class='form'>
               <h3>Required fields are missing.</h3><br/>
-              <p class='link'>Click here to <a href='registration.php'>registration</a> again.</p>
+              <p class='link'>Click here to <a href='../index.html'>Please registration onace.</a> again.</p>
               </div>";
     }
 
