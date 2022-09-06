@@ -85,7 +85,9 @@
     //Result for registration
     if ($result) {
         echo "<div class='form'>
-              alert(<h3>You are registered successfully.</h3>)<br>
+
+              <h3>You are registered successfully.</h3><br>
+
               <p class='link'>Click here to <a href='../index.html'>Login</a></p>
               </div>";
     } 
