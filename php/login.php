@@ -48,12 +48,12 @@
          header("Location: dashboard.php");
      } else {
          echo 'Session is running';
-        header("Location: http://localhost/ghar_joda/index.html");
+        header("Location: ../index.html");
      }
    }
    else{
       echo 'Session is not running';
-      header("Location: http://localhost/ghar_joda/index.html");
+      header("Location: ../index.html");
    }
 
 
