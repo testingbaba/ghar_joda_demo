@@ -1,9 +1,7 @@
 <?php
     session_start();
-    
-    if($_SESSION['username']=="") {
-
-        header("Location: ../index.html");
-
+    if(!isset($_SESSION["email"])) {
+        header("Location:../index.html");
+        exit();
     }
 ?>
