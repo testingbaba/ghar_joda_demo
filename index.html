@@ -156,6 +156,7 @@
     </section>
     <!-- ***** Main Banner Area End ***** -->
 
+    <!-- **** registration and login form section **** -->
     <div class="first-div d-none" id="reg-login">
       <div class="login-wrap">
         <span class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></span>
@@ -173,14 +174,13 @@
                 <div class="group">
                   <label for="pass" class="label">Password</label>
 
-                  <input id="pass" type="password" class="input" data-type="password" name="pass" >
+                  <input id="log-pass" type="password" class="input" data-type="password" name="pass" >
                 </div> 
-                <!-- <div class="group">
-
-                  <input id="check" type="checkbox" class="check" checked>
-                  <label for="check"><span class="icon"></span> Keep me Signed in</label>
-                </div> -->
-                <div class="group mt-5">
+                <div class="group mt-4">
+                  <input id="check" type="checkbox" class="check">
+                  <label for="check"><span class="icon"></span> Show Password</label>
+                </div>
+                <div class="group mt-4">
                   <button type="submit" class="button" name="sing_in">Sing In</button>
 
                 </div>
@@ -196,6 +196,16 @@
                   <label for="user" class="label">User Name</label>
                   <input id="user" type="text" class="input" name="name">
                 </div>
+                <!-- <div class="row">
+                  <div class=" col-md-6 group">
+                    <label for="fname" class="label">First Name</label>
+                    <input id="fname" type="text" class="input" name="fname">
+                  </div>
+                  <div class=" col-md-6 group">
+                    <label for="sname" class="label">Second Name</label>
+                    <input id="sname" type="text" class="input" name="sname">
+                  </div>
+                </div> -->
                 <div class="group">
                   <label for="pass" class="label">User Email</label>
                   <input id="pass" type="email" class="input" name="email">
@@ -207,12 +217,16 @@
                 <div class="row">
                   <div class=" col-md-6 group">
                     <label for="pass" class="label">Enter Password</label>
-                    <input id="pass" type="password" class="input" data-type="password" name="pass1">
+                    <input id="reg-pass1" type="password" class="input" data-type="password" name="pass1">
                   </div>
                   <div class=" col-md-6 group">
                     <label for="pass" class="label">Repeat Password</label>
-                    <input id="pass" type="password" class="input" data-type="password" name="pass2">
+                    <input id="reg-pass2" type="password" class="input" data-type="password" name="pass2">
                   </div>
+                </div>
+                <div class="group">
+                  <input id="check2" type="checkbox" class="check">
+                  <label for="check2"><span class="icon"></span> Show Password</label>
                 </div>
                 <div class="group">
                   <input type="submit" class="button" style="cursor: pointer;" name="user_reg" value="Sign Up">
@@ -1147,6 +1161,38 @@
             $('.close-btn').on("click", function () {
                 $('.first-div').addClass("d-none")
             })
+
+            var a="uncheck";
+            $("#check2,#check2 label").click(function(){
+              if(a=="uncheck"){
+                $("#reg-pass1").attr('data-type','text');
+                $("#reg-pass2").attr('data-type','text');
+                $("#reg-pass1").attr('type','text');
+                $("#reg-pass2").attr('type','text');
+                a="check";
+              }else{
+                $("#reg-pass1").attr('data-type','password');
+                $("#reg-pass2").attr('data-type','password');
+                $("#reg-pass1").attr('type','password');
+                $("#reg-pass2").attr('type','password');
+                a="uncheck";
+              }
+            })
+
+            var b="uncheck";
+            $("#check,#check label").click(function(){
+              if(b=="uncheck"){
+                $("#log-pass").attr('data-type','text');
+                $("#log-pass").attr('type','text');
+                b="check";
+              }else{
+                $("#log-pass").attr('data-type','password');
+                $("#log-pass").attr('type','password');
+                b="uncheck";
+              }
+            })
+            
+
         })
 
   </script>

@@ -52,7 +52,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 
                             $output.='<p>Please click on the following link to reset your password.</p>';
                             //replace the site url
-                            $output.='<p><a href="http://localhost/ghar_joda/php/reset_password.php?key=' . $key . '&email=' . $email . '&action=reset" target="_blank">http://localhost/ghar_joda/php/reset_password.php?key=' . $key . '&email=' . $email . '&action=reset</a></p>';
+                            $output.='<p><a href="http://localhost/all_project_here/ghar_joda/php/reset_password.php?key=' . $key . '&email=' . $email . '&action=reset" target="_blank">http://localhost/all_project_here/ghar_joda/php/reset_password.php?key=' . $key . '&email=' . $email . '&action=reset</a></p>';
                             $body = $output;
                             $subject = "Password Recovery";
 
@@ -105,7 +105,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 
                         <div class="form-group">
                             <input type="submit" id="reset" value="Reset Password"  class="btn btn-primary"/>&nbsp;&nbsp;
-                            <a href="../index.html" class="btn btn-primary"/> Log In</a>
+                            <a href="../index.html" class="btn btn-primary">Log In</a>
                         </div>
                     </form>
 
