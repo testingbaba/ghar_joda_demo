@@ -5,12 +5,17 @@ use PHPMailer\PHPMailer\PHPMailer;
 <html>
     <head>
         <title>Password Recovery using PHP and MySQL</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
 
-        <div class="container">
-                <div class="d-flex justify-content-center align-items-center" style="height:100vh; width:100%;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+
+                    <h2>Forgot Password</h2>
+
 
                     <?php
                     include('../database/conn_db.php');
@@ -92,25 +97,21 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 
                     <!-- Forgot Password form section -->
-                    <div class="forget-form py-4 px-5 bg-light rounded shadow border">
                     <form method="post" action="" name="reset">
-                        <h1 class="my-3">Forgot Password</h1>
-                        <div class="form-group my-4">
-                           <label class="my-2"><strong>Enter Your Email Address:</strong></label>
+                        <div class="form-group">
+                           <label><strong>Enter Your Email Address:</strong></label>
                             <input type="email" name="email" placeholder="username@email.com" class="form-control"/>
                         </div>
 
-                        <div class="form-group mt-4 d-flex justify-content-between">
+                        <div class="form-group">
                             <input type="submit" id="reset" value="Reset Password"  class="btn btn-primary"/>&nbsp;&nbsp;
                             <a href="../index.html" class="btn btn-primary">Log In</a>
                         </div>
                     </form>
-                    </div>
 
                 </div>
+                <div class="col-md-4"></div>
+            </div>
         </div>
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-
     </body>
 </html>

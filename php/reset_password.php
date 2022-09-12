@@ -1,16 +1,16 @@
 <html>
     <head>
         <title>Reset Password</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" />
-        <style>
-        .inner-form-div{
-            width: 400px;
-            height: 350px;
-            box-sizing: border-box;
-        }
-    </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+
+
                 <?php
                     include('../database/conn_db.php');
                     if (isset($_GET["key"]) && isset($_GET["email"]) && isset($_GET["action"]) && ($_GET["action"] == "reset") && !isset($_POST["action"])) {
@@ -26,32 +26,28 @@
                             $expDate = $row['expDate'];
                             if ($expDate >= $curDate) {
                                 ?> 
-                                <div class="outer-form-div d-flex justify-content-center align-items-center" style="height:100vh;">
-                                <div class="inner-form-div py-4 px-5 bg-light rounded-4 shadow border" >
-                                    <h1 class="my-3">Reset Password</h1>   
-                                    <form method="post" action="">
+                                <h2>Reset Password</h2>   
+                                <form method="post" action="">
 
-                                        <input type="hidden" name="action" value="update" class="form-control"/>
+                                    <input type="hidden" name="action" value="update" class="form-control"/>
 
-                                        <div class="form-group">
-                                            <label class="mt-3"><strong>Enter New Password:</strong></label>
-                                            <input type="password"  name="pass1"  class="form-control"/>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="mt-3"><strong>Re-Enter New Password:</strong></label>
-                                            <input type="password"  name="pass2" class="form-control"/>
-                                        </div>
-
-                                        <input type="hidden" name="email" value="<?php echo $email; ?>"/>
-
-                                        <div class="form-group">
-                                            <input type="submit" id="reset" value="Reset Password"  class="btn btn-primary my-4"/>
-                                        </div>
-
-                                        </form>
+                                    <div class="form-group">
+                                        <label><strong>Enter New Password:</strong></label>
+                                        <input type="password"  name="pass1"  class="form-control"/>
                                     </div>
-                                </div>
+
+                                    <div class="form-group">
+                                        <label><strong>Re-Enter New Password:</strong></label>
+                                        <input type="password"  name="pass2" class="form-control"/>
+                                    </div>
+
+                                    <input type="hidden" name="email" value="<?php echo $email; ?>"/>
+
+                                    <div class="form-group">
+                                        <input type="submit" id="reset" value="Reset Password"  class="btn btn-primary"/>
+                                    </div>
+
+                                </form>
                                 <?php
                             } else {
                                 $error .= "<h2>Link Expired</h2>>";
@@ -96,6 +92,12 @@
                         }
                     }
                     ?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
-   </body>
+
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+
+
+    </body>
 </html>
