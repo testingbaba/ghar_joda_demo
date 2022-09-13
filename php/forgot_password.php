@@ -9,12 +9,10 @@ use PHPMailer\PHPMailer\PHPMailer;
     </head>
     <body>
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
 
-                    <h2>Forgot Password</h2>
+    <div class="container">
+                <div class="d-flex justify-content-center align-items-center" style="height:100vh; width:100%;">
+
 
 
                     <?php
@@ -97,21 +95,22 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 
                     <!-- Forgot Password form section -->
+                    <div class="forget-form py-4 px-5 bg-light rounded shadow border">
                     <form method="post" action="" name="reset">
-                        <div class="form-group">
-                           <label><strong>Enter Your Email Address:</strong></label>
+                        <h1 class="my-3">Forgot Password</h1>
+                        <div class="form-group my-4">
+                           <label class="my-2"><strong>Enter Your Email Address:</strong></label>
                             <input type="email" name="email" placeholder="username@email.com" class="form-control"/>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group mt-4 d-flex justify-content-between">
                             <input type="submit" id="reset" value="Reset Password"  class="btn btn-primary"/>&nbsp;&nbsp;
                             <a href="../index.html" class="btn btn-primary">Log In</a>
                         </div>
                     </form>
+                    </div>
 
                 </div>
-                <div class="col-md-4"></div>
-            </div>
         </div>
     </body>
 </html>
