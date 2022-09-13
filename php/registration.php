@@ -55,12 +55,15 @@
     }
 
     if(isset($_POST['email'])){
-      $sel_query = "SELECT * FROM `user_reg` WHERE user_email='" . $email . "'";
-      $results_1 = mysqli_query($con, $sel_query);
-      $row = mysqli_num_rows($results_1);
-      if ($row != "") {
+      $sel_query_email = "SELECT * FROM `user_reg` WHERE user_email='" . $email . "'";
+      $sel_query_phone = "SELECT * FROM `user_reg` WHERE user_contact='" . $phone . "'";
+      $results_1 = mysqli_query($con, $sel_query_email);
+      $results_2 = mysqli_query($con, $sel_query_phone);
+      $row1 = mysqli_num_rows($results_1);
+      $row2 = mysqli_num_rows($results_2);
+      if ($row1 != "" && $row2 !="" ) {
         $error .= "User already Registered.";
-        died("User already Registered");
+        died("User already Registered on this email or phone number");
       }
       else{  //1
         // generate OTP
