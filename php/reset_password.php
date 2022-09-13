@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Reset Password</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" />
     </head>
     <body>
 
@@ -89,5 +89,6 @@
         }
     }
 ?>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
