@@ -9,11 +9,9 @@ use PHPMailer\PHPMailer\PHPMailer;
     </head>
     <body>
 
-
     <div class="container">
                 <div class="d-flex justify-content-center align-items-center" style="height:100vh; width:100%;">
-
-
+                <div class="forget-form py-4 px-5 bg-light rounded shadow border">
 
                     <?php
                     include('../database/conn_db.php');
@@ -23,13 +21,13 @@ use PHPMailer\PHPMailer\PHPMailer;
                         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
                         $email = filter_var($email, FILTER_VALIDATE_EMAIL);
                         if (!$email) {
-                            $error .="Invalid email address";
+                            $error .="<p class='text-danger my-3'>Invalid email address</p>";
                         } else {
                             $sel_query = "SELECT * FROM `user_reg` WHERE user_email='" . $email . "'";
                             $results = mysqli_query($con, $sel_query);
                             $row = mysqli_num_rows($results);
                             if ($row == "") {
-                                $error .= "User Not Found";
+                                $error .= "<p class='text-danger my-3'>User Not Found</p>";
                             }
                         }
                         if ($error != "") {
@@ -67,26 +65,26 @@ use PHPMailer\PHPMailer\PHPMailer;
                             $mail->isSMTP();                                            //Send using SMTP
                             $mail->Host       = 'testingbaba.com';                     //Set the SMTP server to send through
                             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-                            $mail->Username   = 'info@testingbaba.com';                     //SMTP username
-                            $mail->Password   = 'Testing@120';                             //SMTP password
+                            $mail->Username   = 'kinshuk.maity@testingbaba.com';                     //SMTP username
+                            $mail->Password   = 'Maity@123';                             //SMTP password
                             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
                             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
                             $mail->IsHTML(true);
-                            $mail->From = "info@testingbaba.com";
+                            $mail->From = "kinshuk.maity@testingbaba.com";
                             $mail->FromName = "Ghar Joda  - Forgot Password ";
 
 
                             //Recipients
-                           // $mail->setFrom('info@testingbaba.com', 'Ghar Joda  - Forgot Password');
+                           // $mail->setFrom('kinshuk.maity@testingbaba.com', 'Ghar Joda  - Forgot Password');
                             
 
                             $mail->Subject = $subject;
                             $mail->Body = $body;
                             $mail->AddAddress($email_to);
                             if (!$mail->Send()) {
-                                echo "Mailer Error: " . $mail->ErrorInfo;
+                                echo "<p class='text-danger my-3'> Mailer Error: " . $mail->ErrorInfo."</p>";
                             } else {
-                                echo "An email has been sent";
+                                echo "<p class='my-3'>An email has been sent<p>";
                                 //header("Location: http://localhost/ghar_joda/index.html");
                             }
                         }
@@ -95,12 +93,11 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 
                     <!-- Forgot Password form section -->
-                    <div class="forget-form py-4 px-5 bg-light rounded shadow border">
                     <form method="post" action="" name="reset">
                         <h1 class="my-3">Forgot Password</h1>
                         <div class="form-group my-4">
                            <label class="my-2"><strong>Enter Your Email Address:</strong></label>
-                            <input type="email" name="email" placeholder="username@email.com" class="form-control"/>
+                            <input type="email" name="email" placeholder="username@email.com" class="form-control" required/>
                         </div>
 
                         <div class="form-group mt-4 d-flex justify-content-between">
@@ -108,6 +105,7 @@ use PHPMailer\PHPMailer\PHPMailer;
                             <a href="../index.html" class="btn btn-primary">Log In</a>
                         </div>
                     </form>
+
                     </div>
 
                 </div>

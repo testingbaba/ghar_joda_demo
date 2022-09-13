@@ -90,7 +90,7 @@
 
 
         //Recipients
-        // $mail->setFrom('info@testingbaba.com', 'Ghar Joda  - Forgot Password');
+        // $mail->setFrom('kinshuk.maity@testingbaba.com', 'Ghar Joda  - Forgot Password');
                             
 
         $mail->Subject = $subject;
