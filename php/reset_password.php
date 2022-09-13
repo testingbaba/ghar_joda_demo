@@ -4,6 +4,7 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" />
     </head>
     <body>
+
 <?php
     include('../database/conn_db.php');
     if (isset($_GET["key"]) && isset($_GET["email"]) && isset($_GET["action"]) && ($_GET["action"] == "reset") && !isset($_POST["action"])) {
@@ -72,7 +73,6 @@
         if ($error != "") {
             echo $error;
         } else {
-
             $pass1 = md5($pass1);
             
             $queryfinal= mysqli_query($con, "UPDATE `user_reg` SET `password` = '" . $pass1 . "' WHERE `user_email` = '" . $email . "'");
