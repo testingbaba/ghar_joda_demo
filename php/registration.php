@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,7 +54,15 @@
            died('Error found with the form you submitted.');
     }
 
-    if(isset($_POST['email'])){  //1
+    if(isset($_POST['email'])){
+      $sel_query = "SELECT * FROM `user_reg` WHERE user_email='" . $email . "'";
+      $results_1 = mysqli_query($con, $sel_query);
+      $row = mysqli_num_rows($results_1);
+      if ($row != "") {
+        $error .= "User already Registered.";
+        died("User already Registered");
+      }
+      else{  //1
         // generate OTP
         $otp = rand(100000,999999);
         // Send OTP from mail
@@ -73,12 +80,12 @@
         $mail->isSMTP();                                            //Send using SMTP
         $mail->Host       = 'testingbaba.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'info@testingbaba.com';                     //SMTP username
-        $mail->Password   = 'Testing@120';                             //SMTP password
+        $mail->Username   = 'kinshuk.maity@testingbaba.com';                     //SMTP username
+        $mail->Password   = 'Maity@123';                             //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
         $mail->IsHTML(true);
-        $mail->From = "info@testingbaba.com";
+        $mail->From = "kinshuk.maity@testingbaba.com";
         $mail->FromName = "Ghar Joda  - OTP Registration ";
 
 
@@ -89,10 +96,10 @@
         $mail->Subject = $subject;
         $mail->Body = $body;
         $mail->AddAddress($email_to);
-        if (!$mail->Send()) { 
+          if (!$mail->Send()) { 
             echo "Mailer Error: " . $mail->ErrorInfo;
-        } //if
-        else { 
+          } //if
+          else { 
             echo "Check email for OTP";
             $query= "INSERT into `email_otp` (email,email_otp) VALUES ('$email','$otp')";
             // $query_reg= "INSERT into `user_reg` (user_name,user_email,user_contact,password,reg_datatime)
@@ -106,27 +113,9 @@
                  $_SESSION['phone'] =$phone;
                  $_SESSION['pass1'] =$pass1;
                  $_SESSION['pass2'] =$pass2;
-                 $_SESSION['otp'] =$otp;
+                 $_SESSION['otp'] =$otp;                
+                header("Location: otp_email.php");  
 
-                
-                header("Location: otp_email.php");
-?>
-                
-		        <!-- <h1>Check your email for the OTP</h1> -->
-                <!-- <form action='otp_email.php' method="POST">
-                    
-                  <div class="tableheader">Enter OTP :</div>
-                  
-			
-		          <div class="tablerow">
-                    
-			        <input type="number" id="send_otp" name="send_otp" placeholder="One Time Password" class="login-input" required>
-		          </div>
-		          <div class="tableheader"><input type="submit" name="submit_otp" value="Submit" class="btn"></div>
-                  <a href="#" class="btn">Resend OTP</a>
-                </form> -->
-<?php   
-                           
             }  //if
             else{ 
                 echo "Mail not send";
@@ -134,87 +123,8 @@
             } //else
         }// else
     }
-    // if(!empty($_POST["submit_otp"])) {
-    //     $check_otp=$_POST["otp"];
-    //     if($check_otp!=$otp){
-    //         echo "Invalid OTP";
-    //             mysqli_query($con, "DELETE FROM `email_otp` WHERE `email` = '$email'");
-    //         }
-    //         else{
-    //             $query= "INSERT into `user_reg` (user_name,user_email,user_contact,password,reg_datatime)
-    //                       VALUES ('$name','$email','$phone','".md5($pass1)."','$curDate')";
-    //             mysqli_query($con, "DELETE FROM `email_otp` WHERE `email` = '$email'");
-    //             $result = mysqli_query($con, $query);
-  
-    //             //Result for registration
-    //             if ($result) {
-    //                echo "<div class='form'>
-
-    //                <h3>You are registered successfully.</h3><br>
-
-    //                <p class='link'>Click here to <a href='../index.html'>Login</a></p>
-    //               </div>";
-    //             } 
-    //             else {
-    //               echo "<div class='form'>
-    //                <h3>Required fields are missing.</h3><br/>
-    //                <p class='link'>Click here to <a href='../index.html'>Please registration onace.</a> again.</p>
-    //                </div>";
-    //             }
-    //         }
-        
-    // }
-   
-  
-
-
-    //Name validation
-    // $string_exp = "^(?:((([^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]'’,\-.\s])){1,}(['’,\-\.]){0,1}){2,}(([^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]'’,\-. ]))*(([ ]+){0,1}(((([^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]'’,\-\.\s])){1,})(['’\-,\.]){0,1}){2,}((([^0-9_!¡?÷?¿/\\+=@#$%ˆ&*(){}|~<>;:[\]'’,\-\.\s])){2,})?)*)$";
-    // if (!preg_match($string_exp, $name)) {
-    //     $error_message .= 'The First Name you entered does not appear to be valid.<br />';
-    // }
-
-    //Email Validation
-    // $email_exp = "(?![_.-])((?![_.-][_.-])[a-zA-Z\d_.-]){0,63}[a-zA-Z\d]@((?!-)((?!--)[a-zA-Z\d-]){0,63}[a-zA-Z\d]\.){1,2}([a-zA-Z]{2,14}\.)?[a-zA-Z]{2,14}";
-    // if (!preg_match($email_exp, $email)) {
-    //     $error_message .= 'The Email Address you entered does not appear to be valid.<br />';
-    // }
-
-    //Contact Validation
-    // $phone_exp="^[1-9]\d{9}$";
-    // if(!preg_match($phone_exp,$phone)){
-    //     $error_message .= "The Contact number you entered does not appear to be valid.<br />";
-    // }
-    
-    //Password Validation
-    // $password_exp="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})";
-    // if(!preg_match($password_exp,$pass1)){
-    //     $error_message .= " The Password must be a minimum of 8 characters including number, Upper, Lower And one special character.<br />";
-    // }
-
-
-    // When form submitted, insert values into the database.
-    // $query= "INSERT into `user_reg` (user_name,user_email,user_contact,password,reg_datatime)
-    //                  VALUES ('$name','$email','$phone','".md5($pass1)."','$curDate')";
-    // $result = mysqli_query($con, $query);
-  
-    //Result for registration
-    // if ($result) {
-    //     echo "<div class='form'>
-
-    //           <h3>You are registered successfully.</h3><br>
-
-    //           <p class='link'>Click here to <a href='../index.html'>Login</a></p>
-    //           </div>";
-    // } 
-    // else {
-    //     echo "<div class='form'>
-    //           <h3>Required fields are missing.</h3><br/>
-    //           <p class='link'>Click here to <a href='../index.html'>Please registration onace.</a> again.</p>
-    //           </div>";
-    // }
-
-
+}
+ 
 ?>
 
 </body>
