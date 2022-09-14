@@ -53,38 +53,151 @@
                 <div class="form">
                     <form method="post">
                         <div class="row g-3" id="setup">
-                            <div class="col-md-6 my-2">
-                                <label class="form-label">Enter Name</label>
-                                <input type="text" class="form-control">
+                            <div class="form-row col-md-6 my-2">
+                                <div class="form-group">
+                                    <label for="user">Profile for</label>
+                                    <select id="mySelect" class="form-select" onchange="formSon()">
+                                        <option disabled selected>Select</option>
+                                        <option value="Your Name">Self</option>
+                                        <option value="Your son's name">Son</option>
+                                        <option value="Your daughter's name">Daughter</option>
+                                        <option value="Your brother's name">Brother</option>
+                                        <option value="Your sister's name">Sister</option>
+                                        <option value="Your friend's name">Friend</option>
+                                        <option value="Your relative's name">Relative</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row col-md-6 my-2">
+                                <div class="form-group row">
+                                    <label id="yname">Name</label>
+                                    <div class="form-group col-md-6">
+                                        <input type="text" class="form-control" id="FName" placeholder="First Name">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <input type="text" class="form-control" id="LName" placeholder="Last Name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 my-2" id="UGender" style="display:block ;">
+                                <label class="form-label">Gender</label>
+                                <div>
+                                    <div class="form-check-inline ">
+                                        <input class="form-check-input" type="radio" id="Male" value="Male"
+                                            name="inlineRadioOptions">
+                                        <label class="form-check-label text-dark" for="inlineRadio1">Male</label>
+                                    </div>
+                                    <div class="form-check form-check-inline ">
+                                        <input class="form-check-input" type="radio" id="Female" value="Female"
+                                            name="inlineRadioOptions">
+                                        <label class="form-check-label text-dark" for="inlineRadio2">Female</label>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-md-6 my-2">
-                                <label>Gender</label><br>
-                                <div class="form-check form-check-inline mt-3">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions">
-                                    <label class="form-check-label text-dark" for="inlineRadio1">Male</label>
-                                </div>
-                                <div class="form-check form-check-inline mt-3">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions">
-                                    <label class="form-check-label text-dark" for="inlineRadio2">Female</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6 my-2">
-                                <label class="form-label">Religion</label>
+                                <!-- <label class="form-label">Religion</label>
                                 <select class="form-select">
                                     <option selected>Hindu</option>
                                     <option>Muslim</option>
+                                </select> -->
+                                <label for="user">Religion</label>
+                                <select select id="SelectCommunity" name="SelectCommunity" class="form-select" onchange="ChangeCommunity(this.id,'SubCommuntiy')">
+                                    <option disabled selected>Select</option>
+                                    <option value="hindu">Hindu</option>
+                                    <option value="muslim">Muslim</option>
+                                    <option value="christian">Christian</option>
+                                    <option value="jain">Jain</option>
+                                    <option value="sikh">Sikh</option>
+                                    <option value="buddhist">Buddhist</option>
+                                    <option value="parsi">Parsi</option>
+                                    <option value="jewish">Jewish</option>
+                                    <option value="other">Other</option>
+                                    <option value="noReligion">No Religion</option>
+                                    <option value="spritualNotReligious">Spirtual-not religious</option>
                                 </select>
                             </div>
                             <div class="col-md-6 my-2">
-                                <label class="form-label">Community</label>
+                                <!-- <label class="form-label">Community</label>
                                 <select class="form-select">
                                     <option selected>Agarwal</option>
                                     <option>Arora</option>
+                                </select> -->
+                                <label for="user">Community</label>
+                                <select select class="form-select">
+                                    <option disabled selected>Select</option>
+                                    <option>Aka</option>
+                                    <option>Arabic</option>
+                                    <option>Arunachali</option>
+                                    <option>Assamese</option>
+                                    <option>Awadhi</option>
+                                    <option>Baluchi</option>
+                                    <option>Bengali</option>
+                                    <option>Bhojpuri</option>
+                                    <option>Bhutia</option>
+                                    <option>Brahui</option>
+                                    <option>Brij</option>
+                                    <option>Burmese</option>
+                                    <option>Chattisgarhi</option>
+                                    <option>Chinnese</option>
+                                    <option>Coorgi</option>
+                                    <option>Dogri</option>
+                                    <option>English</option>
+                                    <option>French</option>
+                                    <option>Garhwali</option>
+                                    <option>Garo</option>
+                                    <option>Gujarati</option>
+                                    <option>Haryanvi</option>
+                                    <option>Himachali/Pahari</option>
+                                    <option>Hindi</option>
+                                    <option>Hindko</option>
+                                    <option>Kakbarak</option>
+                                    <option>Kanauji</option>
+                                    <option>Kannada</option>
+                                    <option>Kashmiri</option>
+                                    <option>Khandesi</option>
+                                    <option>Khasi</option>
+                                    <option>Konkani</option>
+                                    <option>Koshali</option>
+                                    <option>Kumaoni</option>
+                                    <option>Kutchi</option>
+                                    <option>Ladakhi</option>
+                                    <option>Lepcha</option>
+                                    <option>Magahi</option>
+                                    <option>Maithili</option>
+                                    <option>Malay</option>
+                                    <option>Malayalam</option>
+                                    <option>Manipuri</option>
+                                    <option>Marathi</option>
+                                    <option>Marwari</option>
+                                    <option>Miji</option>
+                                    <option>Mizo</option>
+                                    <option>Monpa</option>
+                                    <option>Nepali</option>
+                                    <option>Odia</option>
+                                    <option>Pashto</option>
+                                    <option>Persian</option>
+                                    <option>Punjabi</option>
+                                    <option>Rajasthani</option>
+                                    <option>Russian</option>
+                                    <option>Sanskrit</option>
+                                    <option>Santhali</option>
+                                    <option>Seraiki</option>
+                                    <option>Sindhi</option>
+                                    <option>Sinhala</option>
+                                    <option>Sourashtra</option>
+                                    <option>Spanish</option>
+                                    <option>Swedish</option>
+                                    <option>Tagalog</option>
+                                    <option>Tamil</option>
+                                    <option>Telgu</option>
+                                    <option>Tulu</option>
+                                    <option>Urdu</option>
+                                    <option>Other</option>
                                 </select>
                             </div>
                             <div class="col-md-6 my-2">
-                                <label class="form-label">Enter Email</label>
-                                <input type="email" class="form-control">
+                                <label>Enter Email</label>
+                                <input type="email" class="form-control" placeholder="Enter your email">
                             </div>
                             <div class="col-md-6 my-2">
                                 <label class="form-label">Date of Birth</label>
@@ -96,7 +209,37 @@
                             </div>
                             <div class="col-md-6 my-2">
                                 <label class="form-label">State</label>
-                                <input type="text" class="form-control">
+                                <select class="form-select">
+                                    <option selected disabled>Please select your State</option>
+                                    <option>Andhra Pradesh</option>
+                                    <option>Arunachal Pradesh</option>
+                                    <option>Assam</option>
+                                    <option>Bihar</option>
+                                    <option>Chhattisgarh</option>
+                                    <option>Goa</option>
+                                    <option>Gujarat</option>
+                                    <option>Haryana</option>
+                                    <option>Himachal Pradesh</option>
+                                    <option>Jharkhand</option>
+                                    <option>Karnataka</option>
+                                    <option>Kerala</option>
+                                    <option>Madhya Pradesh</option>
+                                    <option>Maharashtra</option>
+                                    <option>Manipur</option>
+                                    <option>Meghalaya</option>
+                                    <option>Mizoram</option>
+                                    <option>Nagaland</option>
+                                    <option>Odisha</option>
+                                    <option>Punjab</option>
+                                    <option>Rajasthan</option>
+                                    <option>Sikkim</option>
+                                    <option>Tamil Nadu</option>
+                                    <option>Telangana</option>
+                                    <option>Tripura</option>
+                                    <option>Uttar Pradesh</option>
+                                    <option>Uttarakhand</option>
+                                    <option>West Bengal</option>
+                                </select>
                             </div>
                             <div class="col-12 d-flex justify-content-end">
                                 <a class="btn btn-primary setup-btn" style="font-size: 20px; font-weight: 500;">Next</a>
@@ -108,47 +251,146 @@
                         <div class="row g-3 d-none" id="basic">
                             <div class="col-md-6 my-2">
                                 <label class="form-label">City you live in ?</label>
-                                <input type="text" class="form-control">
+                                <input type="text" class="form-control" placeholder="Your current city">
                             </div>
                             <div class="col-md-6 my-2">
-                                <label>You lives with your family ?</label><br>
+                                <label> Do you lives with your family?</label><br>
                                 <div class="form-check form-check-inline mt-3">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions">
-                                    <label class="form-check-label text-dark" for="inlineRadio1">Yes</label>
+                                    <input class="form-check-input" type="radio" name="FamilyCity" id="FamYes"
+                                        onchange="Family()">
+                                    <label class="form-check-label text-dark" for="FamYes">Yes</label>
                                 </div>
                                 <div class="form-check form-check-inline mt-3">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions">
-                                    <label class="form-check-label text-dark" for="inlineRadio2">No</label>
+                                    <input class="form-check-input" type="radio" name="FamilyCity" id="FamNo"
+                                        onchange="Family()">
+                                    <label class="form-check-label text-dark" for="FamNo">No</label>
                                 </div>
                             </div>
-                            <div class="col-md-6 my-2">
+                            <div class="col-md-6 my-2" style="display:none;" id="UFamily">
+                                <label class="form-label">City your family live in ?</label>
+                                <input type="text" id="FamilyAddress" class="form-control"
+                                    placeholder="Your families current city">
+                            </div>
+                            <!-- <div class="col-md-6 my-2">
                                 <label class="form-label">Your martial status</label>
                                 <select class="form-select">
                                     <option selected>Divorced</option>
                                     <option>Never married</option>
                                 </select>
+                            </div> -->
+
+                            <div class="col-md-6 my-2">
+                                <label for="MarriageStatus" class="form-label">Your martial status:</label>
+                                <select id="Mstatus" class="form-select" onchange="MaritalStatus()">
+                                    <option disabled selected>Please Select</option>
+                                    <option value=1>Never married</option>
+                                    <option value=2>Divorced</option>
+                                    <option value=3>Widowed</option>
+                                    <option value=4>Awaiting Divorce</option>
+                                    <option value=5>Annulled</option>
+                                </select>
                             </div>
+
+
+                            <div class="col-md-6 my-2" style="display:none;" id="Child">
+                                <label>Does you have any children</label>
+                                <br>
+                                <div class="form-check form-check-inline mt-3">
+                                    <input type="radio" class="form-check-input" name="Anychild" id="option5"
+                                        onchange="HaveChild()">
+                                    <label class="form-check-label text-dark" for="option5">No</label>
+                                </div>
+                                <div class="form-check form-check-inline mt-3">
+                                    <input type="radio" class="form-check-input" name="Anychild" id="option6"
+                                        onchange="HaveChild()">
+                                    <label class="form-check-label text-dark" for="option6">Yes, Living together</label>
+                                </div>
+                                <div class="form-check form-check-inline mt-3">
+                                    <input type="radio" class="form-check-input" name="Anychild" id="option7"
+                                        onchange="HaveChild()">
+                                    <label class="form-check-label text-dark" for="option7">Yes, Not living
+                                        together</label>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-6 my-2" style="display:none;" id="NumberOfChild">
+                                <label>No. of children</label>
+                                <br>
+                                <div class="form-check form-check-inline mt-3">
+                                    <input type="radio" class="form-check-input" name="childNum" id="option8">
+                                    <label class="form-check-label text-dark" for="option8">1</label>
+                                </div>
+                                <div class="form-check form-check-inline mt-3">
+                                    <input type="radio" class="form-check-input" name="childNum" id="option9">
+                                    <label class="form-check-label text-dark" for="option9">2</label>
+                                </div>
+                                <div class="form-check form-check-inline mt-3">
+                                    <input type="radio" class="form-check-input" name="childNum" id="option10">
+                                    <label class="form-check-label text-dark" for="option10">3</label>
+                                </div>
+                                <div class="form-check form-check-inline mt-3">
+                                    <input type="radio" class="form-check-input" name="childNum" id="option11">
+                                    <label class="form-check-label text-dark" for="option11">More than 3</label>
+                                </div>
+                            </div>
+
+
                             <div class="col-md-6 my-2">
                                 <label class="form-label">Your Diet</label>
                                 <select class="form-select">
-                                    <option selected>veg</option>
+                                    <option selected disabled>Please select</option>
+                                    <option>veg</option>
                                     <option>Non-veg</option>
+                                    <option>Occasionally Non-veg</option>
+                                    <option>Eggetarian</option>
+                                    <option>Jain</option>
+                                    <option>Vegan</option>
                                 </select>
                             </div>
                             <div class="col-md-6 my-2">
                                 <label class="form-label">Your height</label>
                                 <select class="form-select">
-                                    <option selected>5.0 fit</option>
-                                    <option>5.4 fit</option>
-                                    <option>6.0 fit</option>
+                                    <option selected disabled>Please select</option>
+                                    <option>4.5 ft</option>
+                                    <option>4.6 ft</option>
+                                    <option>4.7 ft</option>
+                                    <option>4.8 ft</option>
+                                    <option>4.9 ft</option>
+                                    <option>4.10 ft</option>
+                                    <option>4.11 ft</option>
+                                    <option>5 ft</option>
+                                    <option>5.1 ft</option>
+                                    <option>5.2 ft</option>
+                                    <option>5.3 ft</option>
+                                    <option>5.4 ft</option>
+                                    <option>5.5 ft</option>
+                                    <option>5.6 ft</option>
+                                    <option>5.7 ft</option>
+                                    <option>5.8 ft</option>
+                                    <option>5.9 ft</option>
+                                    <option>5.10 ft</option>
+                                    <option>5.11 ft</option>
+                                    <option>6 ft</option>
+                                    <option>6.1 ft</option>
+                                    <option>6.2 ft</option>
+                                    <option>6.3 ft</option>
+                                    <option>6.4 ft</option>
+                                    <option>6.5 ft</option>
+                                    <option>6.6 ft</option>
+                                    <option>6.7 ft</option>
+                                    <option>6.8 ft</option>
+                                    <option>6.9 ft</option>
+                                    <option>6.10 ft</option>
+                                    <option>6.11 ft</option>
+                                    <option>7 ft</option>
                                 </select>
                             </div>
-                            <div class="col-md-6 my-2">
+                            <div class="col-md-6 my-2" id="SCommunity" style="display:block ;">
                                 <label class="form-label">Your Sub-community</label>
-                                <select class="form-select">
-                                    <option selected>Agarwal</option>
-                                    <option>Arora</option>
-                                    <option>Baniya</option>
+                                <select class="form-select" id="SubCommuntiy" name="SubCommuntiy">
+                                    <option selected disabled value="default">Please Select</option>
                                 </select>
                             </div>
                             <div class="col-12 d-flex justify-content-between">
@@ -162,43 +404,53 @@
 
                         <div class="row g-3 d-none" id="profile">
                             <div class="col-md-6 my-2">
-                                <label class="form-label">Health Information</label>
-                                <select class="form-select">
-                                    <option selected>No Healthy Problems</option>
-                                    <option>HIV Positive</option>
+                                <label class="form-label">His highest qualification</label>
+                                <select class="form-select" id="HQualification">
+                                    <option selected disabled value="default">Please Select</option>
                                 </select>
                             </div>
                             <div class="col-md-6 my-2">
-                                <label class="form-label">Any Disability</label>
-                                <select class="form-select">
-                                    <option selected>None</option>
-                                    <option>Physical Disability</option>
+                                <label class="form-label">His collage name</label>
+                                <input class="form-control" type="text" id="CollageName"
+                                    placeholder="Please enter your collage name">
+                            </div>
+                            <div class="col-md-6 my-2">
+                                <label class="form-label">Your work sector</label>
+                                <select class="form-select" id="WorkSector">
+                                    <option selected disabled>Working with</option>
                                 </select>
                             </div>
                             <div class="col-md-6 my-2">
-                                <label class="form-label">Mother Tongue</label>
-                                <select class="form-select">
-                                    <option selected>Hindi</option>
-                                    <option>Urdu</option>
-                                    <option>English</option>
-                                </select>
+                                <label class="form-label">You work as</label>
+                                <input class="form-control" type="text" id="profession"
+                                    placeholder="Ex: Accountant, Software Developer, Teacher">
                             </div>
                             <div class="col-md-6 my-2">
-                                <label class="form-label">Gothra/Gothram</label>
+                                <label class="form-label">Your yearly income</label>
                                 <select class="form-select">
-                                    <option selected>Aatharvas</option>
-                                    <option>Agasthi</option>
-                                    <option>Ahabhunasa</option>
+                                    <option selected>upto 1 lakh yearly</option>
+                                    <option>1 to 2 lakh yearly</option>
+                                    <option>2 to 3 lakh yearly</option>
+                                    <option>3 to 4 lakh yearly</option>
+                                    <option>4 to 7 lakh yearly</option>
+                                    <option>7 to 10 lakh yearly</option>
+                                    <option>10 to 15 lakh yearly</option>
+                                    <option>15 to 20 lakh yearly</option>
+                                    <option>20 to 30 lakh yearly</option>
+                                    <option>30 to 50 lakh yearly</option>
+                                    <option>50 to 70 lakh yearly</option>
+                                    <option>70 to 1 Crore yearly</option>
+                                    <option>1 Crore and above yearly</option>
                                 </select>
                             </div>
-                            <div class="col-md-6 my-2">
+                            <!-- <div class="col-md-6 my-2">
                                 <label class="form-label">Fathers Status</label>
                                 <select class="form-select">
                                     <option selected>Employed</option>
                                     <option>Business</option>
                                     <option>Retired</option>
                                 </select>
-                            </div>
+                            </div> -->
                             <div class="col-md-6 my-2">
                                 <label class="form-label">Mother Status</label>
                                 <select class="form-select">
@@ -207,10 +459,10 @@
                                     <option>Employed</option>
                                 </select>
                             </div>
-                            <div class="col-md-6 my-2">
+                            <!-- <div class="col-md-6 my-2">
                                 <label class="form-label">Family Location</label>
                                 <input type="text" class="form-control">
-                            </div>
+                            </div> -->
                             <div class="col-md-6 my-2">
                                 <label class="form-label">Native Place</label>
                                 <input type="text" class="form-control">
@@ -262,7 +514,7 @@
                                     <label class="form-check-label text-dark" for="inlineRadio2">Don't know</label>
                                 </div>
                             </div>
-                            <div class="col-md-6 my-2">
+                            <!-- <div class="col-md-6 my-2">
                                 <label class="form-label">Nakshatra</label>
                                 <select class="form-select">
                                     <option selected>Ashwini</option>
@@ -270,7 +522,7 @@
                                     <option>Krittika</option>
                                     <option>Rohini</option>
                                 </select>
-                            </div>
+                            </div> -->
                             <div class="col-12 d-flex justify-content-between">
                                 <a class="btn btn-primary pre-profile-btn"
                                     style="font-size: 20px; font-weight: 500;">Previous</a>
@@ -533,6 +785,840 @@
             })
         })
     </script>
+    <script>
+        function formSon() {
+            var x = document.getElementById("mySelect").value;
+            document.getElementById("yname").innerHTML = x;
+            if (x == "Your son's name" || x == "Your daughter's name" || x == "Your brother's name" || x == "Your sister's name") {
+                document.getElementById("UGender").style.display = 'none';
+            } else
+                document.getElementById("UGender").style.display = 'block';
+
+
+            if (x == "Your son's name" || x == "Your brother's name") {
+                const MaleBtn = document.getElementById("Male");
+                MaleBtn.checked = true;
+            }
+            else if (x == "Your daughter's name" || x == "Your sister's name") {
+                const FeMaleBtn = document.getElementById("Female");
+                FeMaleBtn.checked = true;
+            }
+            else {
+                const MaleBtn = document.getElementById("Male");
+                const FeMaleBtn = document.getElementById("Female");
+                MaleBtn.checked = false;
+                FeMaleBtn.checked = false;
+            }
+
+        }
+    </script>
+
+
+    <script>
+        function Family() {
+            const famSelectYes = document.getElementById("FamYes");
+            const famSelectNo = document.getElementById("FamNo");
+            if (famSelectYes.checked == true) {
+                document.getElementById('FamilyAddress').value = "";
+                document.getElementById("UFamily").style.display = 'none';
+            }
+            else {
+                document.getElementById("UFamily").style.display = 'block';
+            }
+        }
+    </script>
+
+
+
+    <script>
+        function MaritalStatus() {
+            const x = document.getElementById("Mstatus").value;
+            if (x == 2 || x == 3 || x == 4 || x == 5) {
+                document.getElementById("Child").style.display = 'block';
+            }
+            else {
+                document.getElementById("Child").style.display = 'none';
+                document.getElementById("NumberOfChild").style.display = 'none';
+                document.getElementById("option8").checked = false;
+                document.getElementById("option9").checked = false;
+                document.getElementById("option10").checked = false;
+                document.getElementById("option11").checked = false;
+                document.getElementById("option5").checked = false;
+                document.getElementById("option6").checked = false;
+                document.getElementById("option7").checked = false;
+            }
+        }
+    </script>
+    <script>
+        function HaveChild() {
+            const ShowChild = document.getElementById("option5");
+            const ShowChild1 = document.getElementById("option6");
+            const ShowChild2 = document.getElementById("option7");
+            if (ShowChild1.checked == true || ShowChild2.checked == true) {
+                document.getElementById("NumberOfChild").style.display = 'block';
+            }
+            else {
+                document.getElementById("NumberOfChild").style.display = 'none';
+                document.getElementById("option8").checked = false;
+                document.getElementById("option9").checked = false;
+                document.getElementById("option10").checked = false;
+                document.getElementById("option11").checked = false;
+            }
+        }
+    </script>
+
+    <script>
+
+    </script>
+    <script>
+        var HQualification = document.getElementById("HQualification"),
+            qualification = [
+                "B.E / B.Tech",
+                "M.E / M.Tech",
+                "M.S Engineering",
+                "B.Eng(Hons)",
+                "M.Eng(Hons)",
+                "Engineering Diploma",
+                "AE",
+                "AET",
+                "B.A",
+                "B.Ed",
+                "BJMC",
+                "BFA",
+                "B.Arch",
+                "B.Des",
+                "BMM",
+                "MFA",
+                "M.Ed",
+                "M.A",
+                "MSW",
+                "MJMC",
+                "M.Arch",
+                "M.Des",
+                "BA(Hons)",
+                "B.Arch(Hons)",
+                "DFA",
+                "D.Ed",
+                "D.Arch",
+                "AA",
+                "AFA",
+                "B.Com",
+                "CA / CPA",
+                "CFA",
+                "CS",
+                "BSc / BFin",
+                "M.Com",
+                "MSc / MFin / MS",
+                "BCom(Hons)",
+                "PGD Finance",
+                "BCA",
+                "B.IT",
+                "BCS",
+                "BA Computer Science",
+                "MCA",
+                "PGDCA",
+                "IT Diploma",
+                "ADIT",
+                "B.Sc",
+                "M.Sc",
+                "BSc(Hons)",
+                "DipSc",
+                "AS",
+                "AAS",
+                "MBBS",
+                "BDS",
+                "BPT",
+                "BAMS",
+                "BHMS",
+                "B.Pharma",
+                "BVSc",
+                "BSN / BScN",
+                "MDS",
+                "MCh",
+                "M.D",
+                "M.S Medicine",
+                "MPT",
+                "DM",
+                "M.Pharma",
+                "MVSc",
+                "MMed",
+                "PGD Medicine",
+                "ADN",
+                "BBA",
+                "BHM",
+                "BBM",
+                "MBA",
+                "PGDM",
+                "ABA",
+                "ADBus",
+                "BL / LLB",
+                "ML / LLM",
+                "LLB(Hons)",
+                "ALA",
+                "Ph.D",
+                "M.Phill",
+                "Others Bechelor"];
+        for (var i = 0; i < qualification.length; i++) {
+            var hql = document.createElement("OPTION"),
+                txt = document.createTextNode(qualification[i]);
+            hql.appendChild(txt);
+            HQualification.insertBefore(hql, HQualification.lastChild);
+
+        }
+    </script>
+    <script>
+        var WorkSector = document.getElementById("WorkSector"),
+            sector = [
+                "Private Company",
+                "Government / Public Sector",
+                "Defense / Civil Services",
+                "Business / Self Employed",
+                "Not Working"
+            ];
+        for (var i = 0; i < sector.length; i++) {
+            var sec = document.createElement("OPTION"),
+                sect = document.createTextNode(sector[i]);
+            sec.appendChild(sect);
+            WorkSector.insertBefore(sec, WorkSector.lastChild);
+
+        }
+    </script>
+    <script>
+        function ChangeCommunity() {
+            var change=document.getElementById('SelectCommunity').value;
+            if(change=="hindu"){
+                document.getElementById('SCommunity').style.display='block';
+                    var arr = [
+                            "24 manai telugu chettiar",
+                            "96 kuli maratha",
+                            "96k kokanastha",
+                            "Adi Andhra",
+                            "Adi Dharmi",
+                            "Adi Dravida",
+                            "Adi Karnataka",
+                            "Agamudayar",
+                            "Agarwal",
+                            "Agnikula Kshatriya",
+                            "Agri",
+                            "Ahir",
+                            "Ahom",
+                            "Ambalavasi",
+                            "Arcot",
+                            "Arekatica",
+                            "Arora",
+                            "Arunthathiyar",
+                            "Arya Vysya",
+                            "Arya samaj",
+                            "Ayyaraka",
+                            "Badaga",
+                            "Baghel/Pal/Gaderiya",
+                            "Bahi",
+                            "Baidya",
+                            "Baishnab",
+                            "Baishya",
+                            "Bajantri",
+                            "Balija-Naidu ",
+                            "Banayat Oriya",
+                            "Banik",
+                            "Baniya",
+                            "Barai",
+                            "Bari",
+                            "Barnwal",
+                            "Barujibi",
+                            "Besta",
+                            "Bhandari",
+                            "Bhatia",
+                            "Bhatraju",
+                            "Bhavsar",
+                            "Bhovi",
+                            "Billava",
+                            "Boya/Nayak/Naik",
+                            "Boyer",
+                            "Brahmbatt",
+                            "Brahmin-Anavil",
+                            "Brahmin-Audichya",
+                            "Brahmin-Barendra",
+                            "Brahmin-Bhatt",
+                            "Brahmin-Bhumihar",
+                            "Brahmin-Brahmbhatt",
+                            "Brahmin-Dadhich/Dadheech",
+                            "Brahmin-Daivadnya",
+                            "Brahmin-Danua",
+                            "Brahmin-Deshastha",
+                            "Brahmin-Dhiman",
+                            "Brahmin-Dravida",
+                            "Brahmin-Embrandiri",
+                            "Brahmin-Goswami",
+                            "Brahmin-gour",
+                            "Brahmin-Saraswat",
+                            "Brahmin-Gujar Gour",
+                            "Brahmin-Gurukkal",
+                            "Brahmin-Halua",
+                            "Brahmin-Havyaka",
+                            "Brahmin-Himachali",
+                            "Brahmin-Hoyasala",
+                            "Brahmin-Lyengar",
+                            "Brahmin-Lyer",
+                            "Brahmin-Jangid",
+                            "Brahmin-Jhadua",
+                            "Brahmin-Jhijhotiya",
+                            "Brahmin-Kanyakubja",
+                            "Brahmin-Karhade",
+                            "Brahmin-Kashmiri pandit",
+                            "Brahmin-Kokanastha",
+                            "Brahmin-Kota",
+                            "Brahmin-Kulin",
+                            "Brahmin-Kumaoni",
+                            "Brahmin-Madhwa",
+                            "Brahmin-Maithili",
+                            "Brahmin-Modh",
+                            "Brahmin-Mohyal",
+                            "Brahmin-Nagar",
+                            "Brahmin-Namboodiri",
+                            "Brahmin-Niyogi",
+                            "Brahmin-Niyogi Nandavariki",
+                            "Brahmin-Other",
+                            "Brahmin-Paliwal",
+                            "Brahmin-Panda",
+                            "Brahmin-Pareek",
+                            "Brahmin-Pushkarna",
+                            "Brahmin-Rarhi",
+                            "Brahmin-Rudraj",
+                            "Brahmin-Sakaldwipi",
+                            "Brahmin-Sanadya",
+                            "Brahmin-Sanketi",
+                            "Brahmin-Saraswat",
+                            "Brahmin-sarua",
+                            "Brahmin-Saryuparin",
+                            "Brahmin-Shivhalli",
+                            "Brahmin-Shirmali",
+                            "Brahmin-Smartha",
+                            "Brahmin-Sri Vaishnava",
+                            "Brahmin-Stanika",
+                            "Brahmin-Tyagi",
+                            "Brahmin-Vaidiki",
+                            "Brahmin-Vaikhanasa",
+                            "Brahmin-Velanadu",
+                            "Brahmin-Viswabrahmin",
+                            "Brahmin-Vyas",
+                            "Brahmo",
+                            "Budhhar",
+                            "Bunt(Shetty)",
+                            "CKP",
+                            "Chalawadi Holeya",
+                            "Chambhar",
+                            "Chandravanshi Kahar",
+                            "Chasa",
+                            "Chattada Sri Vaishnava",
+                            "Chaudary",
+                            "Chaurasia",
+                            "Chekkala-Nair",
+                            "Chennadasar",
+                            "Cheramar",
+                            "Chettiar",
+                            "Chhetri",
+                            "Chippolu/Mera",
+                            "Devadiga",
+                            "Devanga",
+                            "Devar/Thevar/Mukkulathor",
+                            "Devendra Kula Vellalar",
+                            "Dhangar",
+                            "Dheevara",
+                            "Dhiman",
+                            "Dhoba",
+                            "Digambar",
+                            "Dommala",
+                            "Dusadh",
+                            "Ediga",
+                            "Ezhava",
+                            "Ezhuthachan",
+                            "Gabit",
+                            "Ganakar",
+                            "Gandla",
+                            "Ganiga",
+                            "Gatti",
+                            "Gavali",
+                            "Gavara",
+                            "Ghumar",
+                            "Goala",
+                            "Goswami",
+                            "Goud",
+                            "Gounder",
+                            "Gowda",
+                            "Gramani",
+                            "Gudia",
+                            "Gujjar",
+                            "Gupta",
+                            "Guptan",
+                            "Gurjar",
+                            "Halwai",
+                            "Hedge",
+                            "Helava",
+                            "Hugar(Jeer)",
+                            "Intercaste",
+                            "Jaalari",
+                            "Jaiswal",
+                            "Jandra",
+                            "Jangam",
+                            "Jat",
+                            "Jatav",
+                            "Jetty Malla",
+                            "Kachara",
+                            "Kaibarta",
+                            "Kakkalan",
+                            "Kalar",
+                            "Kalinga",
+                            "Kalinga vysya",
+                            "Kalita",
+                            "Kalwar",
+                            "Kamboj",
+                            "Kamma ",
+                            "Kamma Naidu",
+                            "Kammala",
+                            "Kaniyan",
+                            "Kansari",
+                            "Kanu",
+                            "Kapu",
+                            "Kapu Naidu",
+                            "Karana",
+                            "Karmakar",
+                            "Kartha",
+                            "Karuneegar",
+                            "Kasar",
+                            "Kashyap",
+                            "Kavuthiyya/Ezhavathy",
+                            "Kayastha",
+                            "Khandayat",
+                            "Khandelwal",
+                            "Kharwar",
+                            "Khatik",
+                            "Khatri",
+                            "Kirar",
+                            "Koli",
+                            "Koli Patel",
+                            "Kongu Vellala gounder",
+                            "Korama",
+                            "Kori",
+                            "Kosthi",
+                            "Krishnavaka",
+                            "Kshatriya",
+                            "Kshatriya-Bhavasar",
+                            "Kshatriya/Raju/Varma",
+                            "Kudumbi",
+                            "Kulal",
+                            "Kulalar",
+                            "Kulita",
+                            "Kumawat",
+                            "Kumbara",
+                            "Kumbhakar/Kumbhar",
+                            "Kumhar",
+                            "Kummari",
+                            "Kunbi",
+                            "Kurava",
+                            "Kuravan",
+                            "Kurmi",
+                            "Kurmi Kshatriya",
+                            "Kuruba",
+                            "Kuruhina Shetty",
+                            "Kurumbar",
+                            "Kurup",
+                            "Kushwaha",
+                            "Lambadi/Banjara",
+                            "Lambani",
+                            "Leva Patil",
+                            "Lingayath",
+                            "Lohana",
+                            "Lohar",
+                            "Loniya/Lonia/Lunia",
+                            "Lubana",
+                            "Madhesiya",
+                            "Madiga",
+                            "Mahajan",
+                            "Mahar",
+                            "Mahendra",
+                            "Maheshwari",
+                            "Mahindra",
+                            "Mahishya",
+                            "Majabi",
+                            "Mala",
+                            "Malayalee Variar",
+                            "Mali",
+                            "Mallah",
+                            "Mangalorean",
+                            "Maniyani",
+                            "Mannadiar",
+                            "Mannan",
+                            "Mapila",
+                            "Marar",
+                            "Maratha",
+                            "Maratha-Gomantak",
+                            "Maruthuvar",
+                            "Marvar",
+                            "Marwari",
+                            "Matang",
+                            "Maurya",
+                            "Meda",
+                            "Medara",
+                            "Meena",
+                            "Meenavar",
+                            "Meghwal",
+                            "Mehra",
+                            "Menon",
+                            "Meru Darji",
+                            "Modak",
+                            "Mogaveera",
+                            "Monchi",
+                            "Mudaliar",
+                            "Mudaliar-Arcot",
+                            "Mudaliar-saiva",
+                            "Mudaliar - Senguntha",
+                            "Mudiraj",
+                            "Munnuru Kapu",
+                            "Muthuraja",
+                            "Naagavamsam",
+                            "Nadar",
+                            "Nagaralu",
+                            "Nai",
+                            "Naicken",
+                            "Naicker",
+                            "Naidu",
+                            "Naik",
+                            "Nair",
+                            "Nair-Vaniya",
+                            "Nair-Velethadathu",
+                            "Nair-Vilakkithala",
+                            "Namasudra",
+                            "Nambiar",
+                            "Nambisan",
+                            "Namdev",
+                            "Namosudra",
+                            "Napit",
+                            "Nayak",
+                            "Nayaka",
+                            "Neeli",
+                            "Nhavi",
+                            "OBC-Barber/Naayee",
+                            "Oswal",
+                            "Otari",
+                            "Padmasali",
+                            "Panchal",
+                            "Pandaram",
+                            "Panicker",
+                            "Paravan",
+                            "Parit",
+                            "Parkava Kulam",
+                            "Partaj",
+                            "Pasi",
+                            "Paswan",
+                            "Patel",
+                            "Patel-Desai",
+                            "Patel-Dodia",
+                            "Patel-Kadva",
+                            "Patel-Leva",
+                            "Patnaick",
+                            "Patra",
+                            "Patwa",
+                            "Perika",
+                            "Pillai",
+                            "Pisharody",
+                            "Poduval",
+                            "Poosala",
+                            "Porwal",
+                            "Prajapati",
+                            "Pulaya",
+                            "Raigar",
+                            "Rajaka/Chakali/Dhobi",
+                            "Rajbhar",
+                            "Rajput",
+                            "Rajput-Kumaoni",
+                            "Rajput-Lodhi",
+                            "Ramdasia",
+                            "Ramgharia",
+                            "Rauniyar",
+                            "Ravidasia",
+                            "Rawat",
+                            "Reddiar",
+                            "Reddy",
+                            "Relli",
+                            "SSK",
+                            "Sadgop",
+                            "Sagara-Uppara",
+                            "Saha",
+                            "Sahu",
+                            "Saini",
+                            "Saiva Vellala",
+                            "Sallia",
+                            "Sambava",
+                            "Satnami",
+                            "Savji",
+                            "SC",
+                            "ST",
+                            "Senai Thalaivar",
+                            "Sepahia",
+                            "Setti Balija",
+                            "Shah",
+                            "Shilpkar",
+                            "Shimpi",
+                            "Sindhi-Bhanusali",
+                            "Sindhi-Bhatia",
+                            "Sindhi-Chhapru",
+                            "Sindhi-dadu",
+                            "Sindhi-Hyderabadi",
+                            "Sindhi-Larai",
+                            "Sindhi-Lohana",
+                            "Sindhi-Lohiri",
+                            "Sindhi-Sehwani",
+                            "Sindhi-Thatai",
+                            "Sindhi-Amil",
+                            "Sindhi-Baibhand",
+                            "Sindhi-Larkana",
+                            "Sindhi-Sahiti",
+                            "Sindhi-Sakkhar",
+                            "Sindhi-Shikarpuri",
+                            "Somvanshi",
+                            "Sonar",
+                            "Soni",
+                            "Sozhiya Vellalar",
+                            "Sri Vaishnava",
+                            "Srisayana",
+                            "Subarna Banik",
+                            "Sugali(Naika)",
+                            "Sundhi",
+                            "Surya Balija",
+                            "Sutar",
+                            "Suthar",
+                            "Swakula Sali",
+                            "Swarnakar",
+                            "Tamboli",
+                            "Tanti",
+                            "Tantuway",
+                            "Telaga",
+                            "Teli",
+                            "Thachar",
+                            "Thakur",
+                            "Thakkar",
+                            "Thandan",
+                            "Thigala",
+                            "Thiyya",
+                            "Thuluva",
+                            "Tili",
+                            "Togata",
+                            "Turupu Kapu",
+                            "Udayar",
+                            "Urali Gounder",
+                            "Urs",
+                            "Vada Balija",
+                            "Vadagalai",
+                            "Vaddera",
+                            "Vaduka",
+                            "Vaish",
+                            "Vaish-Dhaneshawat",
+                            "Vaishnav",
+                            "Vaishnav-Bhatia",
+                            "Vaishnav-Vania",
+                            "Vaishya",
+                            "Vallala",
+                            "Valluvan",
+                            "Valmiki",
+                            "Vanika Vyshya",
+                            "Vaniya Chettiar",
+                            "Vanjara",
+                            "Vankar",
+                            "Vannan",
+                            "Vannar",
+                            "Vanniyakullak Kshatriya",
+                            "Vanniyar",
+                            "Variar",
+                            "Varshney",
+                            "Veerashaiva",
+                            "Veelan",
+                            "Velama",
+                            "Velar",
+                            "Vellalar",
+                            "Veluthedathu-Nair",
+                            "Vettuva Gounder",
+                            "Vishwakarma",
+                            "Viswabrahmin",
+                            "Vokkaliga",
+                            "Vysya",
+                            "Wadda Balija",
+                            "Yadav",
+                            "Yellapu",
+                            "Other"
+                        ];
+                    
+            }
+
+
+            else if(change=="muslim"){
+                document.getElementById('SCommunity').style.display='block';
+                    var arr = ["Ansari", "Arin", "Awan", "Dekkani", "Jat", "Lebbai", "Memon", "Mugal", "Pathan", "Rajput", "Safi", "Sheikh",
+                            "Shia", "Shia Ithna ashariyyah", "Shia Zaidi", "Siddiqui", "Sunni", "Sunni Ehle-Hadith", "Sunni Hanafi", "Sunni Maliki", "Syed",
+                            "Sunni Safi"];
+                    
+            }
+            else if(change=="christian"){
+                document.getElementById('SCommunity').style.display='block';
+                var arr=["Anglo Indian", "Born Again", "Bretheren", "CMS", "Cannonite", "Catholic", "Catholic Knanya", "Catholic Malankara", "Chaldean Syrian", "Cheramar", "Church of North India (CNI)", "Church of South India (CSI)", "Convert", "Evangelical", "IPC",
+    "Indian Orthodox", "Intercaste", "Jacobite", "Jacobite Knanya", "Knanaya", "Knanaya Catholic", "Knanaya Jacobite", "Knanaya Pentecostal", "Knanya",
+    "Latin Catholic", "Malankara", "Malankara Catholic", "Manglorean", "Marthoma", "Methodist", "Mormon", "Nadar", "Orthodox", "Pentecost", "Presbyterian", "Protestant", "RCSC", "Roman Catholic", "Salvation Army",
+    "Scheduled Caste (SC)", "Scheduled Tribe (ST)", "Seventh day Adventist", "Syrian", "Syrian Catholic", "Syrian Orthodox"];
+            }
+            else if(change=="jain"){
+                document.getElementById('SCommunity').style.display='block';
+                var arr=["Digambar", "Porwal", "Shwetamber", "Vania"];
+            }
+            else if(change=="sikh"){
+                document.getElementById('SCommunity').style.display='block';
+                var arr=["Ahluwalia", "Arora", "Clean Shaven", "Gursikh", "Jat", "Kamboj", "Kor", "Kesadhari", "Khatri", "Kshatriya", "Labana", "Mazhbi/Majabi", "Rajput", "Ramdasia", "Ramgharia",
+    "Ravidasia", "Saini"];
+            }
+            else{
+                document.getElementById('SCommunity').style.display='none';
+            }
+            var string="";
+            for(i=0; i<arr.length; i++)
+            {
+                    string=string+"<option>"+arr[i]+"</option>";
+            }
+            string="<select name='lol'>"+string+"</select>";
+            document.getElementById('SubCommuntiy').innerHTML=string;
+        
+        }
+    </script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+        /An array containing all the country names in the world:/
+  var Hindu = ["Agarwal","Arora","Baniya","Bramin-Bhumihar","Bramin gour",
+  "Bramin Kanyakubja"," Bramin others","Bramin saryuparin","Gupta ","Jat","Jatav",
+  "Kayastha","Khatri","Kshatriya","Kurmi","Kushwaha","Rajput","Thakur",
+  "Yadav","24 manai telugu chettiar","96 kuli maratha","Bermuda","96k kokanastha"," Adi Andhra","Adi Dharmi",
+  "Adi Dravida","Adi Karnataka","Agamudayar","Agarwal","Agnikula Kshatriya","Agri",
+  "Ahir","Ahom","Ambalavasi","Arcot","Arekatica","Arora",
+  "Arunthathiyar","Arya Vysya","Arya samaj","Ayyaraka","Badaga"," Baghel/Pal/Gaderiya","Bahi",
+  "Baidya","Baishnab","Baishya","Bajantri","Balija-Naidu","Banayat Oriya","Banik","Barai",
+  "Bari","Barnwal","Barujibi ","Besta","Bhandari","Bhatia",
+  "Bhatraju","Bhavsar","Bhovi","Billava","Boya/Nayak/Naik","Boyer",
+  "Brahmbatt","Brahmin-Anavil","France","Brahmin-Audichya","Brahmin-Barendra","Brahmin-Bhatt","Brahmin-Bhumihar",
+  "Brahmin-Brahmbhatt","Brahmin-Dadhich/Dadheech","Brahmin-Daivadnya","Gibraltar","Brahmin-Danua","Brahmin-Deshastha",
+  "Brahmin-Dravida","Brahmin-Embrandiri","Brahmin-Goswami",
+  "Guernsey","Brahmin-gour","Brahmin-Saraswat","Brahmin-Gujar Gour","Brahmin-Gurukkal","Brahmin-Halua",
+  "Brahmin-Havyaka","Brahmin-Himachali","Brahmin-Hoyasala","Brahmin-Madhwa",
+  "Brahmin-Maithili","Brahmin-Modh","Brahmin-Mohyal","Brahmin-Nagar"," Brahmin-Namboodiri","Brahmin-Niyogi",
+  "Brahmin-Niyogi Nandavariki","Brahmin-Other",
+  "Brahmin-Lyengar","Brahmin-Lyer","Brahmin-Jangid","Brahmin-Jhadua","Brahmin-Jhijhotiya","Brahmin-Kanyakubja",
+  "Israel","Brahmin-Karhade","Brahmin-Kashmiri pandit","Brahmin-Kokanastha","Brahmin-Kota",
+  "Brahmin-Kulin","Brahmin-Kumaoni","Brahmin-Paliwal","Brahmin-Panda","Brahmin-Pareek","Brahmin-Pushkarna",
+  "Brahmin-Rarhi"," Brahmin-Rudraj","Brahmin-Sakaldwipi","Brahmin- Sanadya","Brahmin-Sanketi","Brahmin-Saraswat",
+  "Brahmin-sarua","Brahmin-Saryuparin","Brahmin-Shivhalli","Brahmin-Shirmali","Brahmin-Smartha","Brahmin-Sri Vaishnava",
+  "Brahmin-Stanika","Brahmin- Tyagi","Brahmin-Vaidiki","Brahmin-Vaikhanasa","Brahmin- Velanadu","Brahmin-Viswabrahmin",
+  "Brahmin-Vyas","Brahmin-Other","Brahmo","Budhhar","Bunt(Shetty)","CKP","Chalawadi Holeya","Chambhar","Chandravanshi Kahar","Chasa","Chattada Sri Vaishnava","Chaudary","Chaurasia","Chekkala-Nair",
+  "Chennadasar","Cheramar","Chettiar","Chhetri","Chippolu/Mera","Devadiga","Devanga","Devar/Thevar/Mukkulathor","Devendra Kula Vellalar","Dhangar","Dheevara","Dhiman","Dhoba","Digambar","Dommala",
+  "Dusadh","Ediga","Ezhava","Ezhuthachan","Gabit","Ganakar","Gandla","Ganiga","Gatti","Gavali","Gavara","Ghumar","Goala","Goswami","Goud",
+  "Gounder","Gowda","Gramani","Gudia","Gujjar","Gupta","Guptan","Ganiga","Gatti","Gavali","Gavara","Ghumar","Goala","Goswami","Goud"];
+  
+  //Muslim//
+
+var Muslim = ["Ansri", "Arin", "Awan", "Dekkani", "Jat", "Lebbai", "Memon", "Mugal", "Pathan", "Rajput", "Safi", "Sheikh", "Shia", "Shia Ithna ashariyyah",
+    "Shia Zaidi", "Siddiqui", "Sunni", "Sunni Ehle-Hadith", "Sunni Hanafi", "Sunni Maliki", "Syed", "Sunni Safi"];
+
+//Shik//
+
+var sikh = ["Ahluwalia", "Arora", "Clean Shaven", "Gursikh", "Jat", "Kamboj", "Kor", "Kesadhari", "Khatri", "Kshatriya", "Labana", "Mazhbi/Majabi", "Rajput", "Ramdasia", "Ramgharia",
+    "Ravidasia", "Saini"];
+
+//Christian//
+
+var Christian = ["Anglo Indian", "Born Again", "Bretheren", "CMS", "Cannonite", "Catholic", "Catholic Knanya", "Catholic Malankara", "Chaldean Syrian", "Cheramar", "Church of North India (CNI)", "Church of South India (CSI)", "Convert", "Evangelical", "IPC",
+    "Indian Orthodox", "Intercaste", "Jacobite", "Jacobite Knanya", "Knanaya", "Knanaya Catholic", "Knanaya Jacobite", "Knanaya Pentecostal", "Knanya",
+    "Latin Catholic", "Malankara", "Malankara Catholic", "Manglorean", "Marthoma", "Methodist", "Mormon", "Nadar", "Orthodox", "Pentecost", "Presbyterian", "Protestant", "RCSC", "Roman Catholic", "Salvation Army",
+    "Scheduled Caste (SC)", "Scheduled Tribe (ST)", "Seventh day Adventist", "Syrian", "Syrian Catholic", "Syrian Orthodox"];
+
+//Jain//
+
+var Jain = ["Digambar", "Porwal", "Shwetamber", "Vania"];
+  /initiate the autocomplete function on the "myInput" element, and pass along the Hindu array as possible autocomplete values:/
+  autocomplete(document.getElementById("myInput"), [...Hindu,...Jain,...Muslim,...shik,...Christian]);
+
+  function getComboA(selectObject) {
+    var value = selectObject.value;  
+    
+    switch(value){
+      case "Hindu":
+        $('.sub-community').css("display","block");
+        autocomplete(document.getElementById("myInput"),Hindu);
+        break;
+
+      case "Muslim":
+        $('.sub-community').css("display","block");
+        autocomplete(document.getElementById("myInput"),Muslim);
+        break;
+
+      case "shik":
+        $('.sub-community').css("display","block");
+        autocomplete(document.getElementById("myInput"),shik);
+        break;
+
+      case "Christian":
+        $('.sub-community').css("display","block");
+        autocomplete(document.getElementById("myInput"),Christian);
+        break;
+
+      case "Jain":
+        $('.sub-community').css("display","block");
+        autocomplete(document.getElementById("myInput"),Jain);
+        break;
+
+      default:
+        $('.sub-community').css("display","none");
+        
+    }
+  }
+     -->
