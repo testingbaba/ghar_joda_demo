@@ -54,7 +54,9 @@
            died('Error found with the form you submitted.');
     }
 
+
     if($pass1==$pass2){
+
       $sel_query_email = "SELECT * FROM `user_reg` WHERE user_email='" . $email . "'";
       $sel_query_phone = "SELECT * FROM `user_reg` WHERE user_contact='" . $phone . "'";
       $results_1 = mysqli_query($con, $sel_query_email);
@@ -127,12 +129,14 @@
         }// else
        }
     }
+
     else{
       echo '<script language="javaScript">
             alert("Password not matched !");
             window.location.href="../index.html?id=1";
           </script>';
     }
+
  
 ?>
 
