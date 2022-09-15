@@ -1103,6 +1103,14 @@
   <script src="assets/js/custom.js"></script>
 
   <script>
+    var urlData=window.location.href;
+    let url = new URL(urlData);
+    let searchParams = new URLSearchParams(url.search);
+    var urlParameter=searchParams.get('id')
+    console.log(urlParameter); 
+    if(urlParameter==1){
+      $('.first-div').removeClass("d-none");
+    }
     //according to loftblog tut
     $('.nav li:first').addClass('active');
 
@@ -1310,7 +1318,6 @@
     });
 
   </script>
-
 
 </body>
 

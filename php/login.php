@@ -48,12 +48,12 @@
          header("Location: dashboard.php");
      } else {
          echo 'Session is running';
-        header("Location: ../index.html");
+        header("Location: ../index.html?id=1");
      }
    }
    else{
       echo 'Session is not running';
-      header("Location: ../index.html");
+      header("Location: ../index.html?id=1");
    }
 
 
