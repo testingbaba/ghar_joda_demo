@@ -11,19 +11,25 @@
 }
 
 .rbody {
-    background-image: url(../images/meetings-bg.jpg);
+    /* background-image: url(../images/meetings-bg.jpg);
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+    /* background-color: #FBDA61;
+    background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%); */
+    /* background-color: #FBDA61;
+    background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%); */
+    background-color: #FFDEE9;
+    background-image: linear-gradient(90deg, #FFDEE9 0%, #B5FFFC 100%);
     font-size: 16px;
 }
 
 
-.footer-links{
+.footer-links {
     line-height: 25px;
-  }
-  
+}
+
 
 .footer-links a:hover {
     color: rgb(251, 176, 63);
@@ -36,7 +42,8 @@
 
 /* footer section */
 
-ul , li {
+ul,
+li {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -127,8 +134,7 @@ a {
     padding: 40px 0px;
 }
 
-.footer 
-{
+.footer {
     /* text-transform: uppercase; */
     font-size: 15px;
     color: #fff;
@@ -151,61 +157,294 @@ a {
     color: #fff;
     margin: 0;
 }
-.soi{
+
+.soi {
     font-size: 18px;
     line-height: 15px;
 }
 
-.main{
+.main {
     width: 100%;
     margin-top: 120px;
     padding: 60px 0px;
 }
 
-.nav{
+.inner-registration{
+    /* border-radius: 30px;
+    overflow: hidden; */
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 10px 15px 15px rgb(179, 179, 179);
+}
+
+.nav {
     width: 100%;
-    background-color: #fff;
     /* color: black; */
     font-size: 20px;
 }
-.nav .nav-link{
+
+.nav .nav-link {
     position: relative;
     padding: 20px 0px !important;
-    color: black;
+    color: tomato;
+    font-size: 18px;
     font-weight: 500;
-    border-radius: 0px;
+    border-radius: 50px;
     margin: 2px 2px;
-    border: 2px solid #a12c2f;
+    border: 2px solid tomato;
+    box-shadow: 5px 5px 10px rgb(179, 179, 179);
 }
 
-.nav .nav-link:hover{
-    background-color: #a12c2f;
+.nav .nav-link:hover {
+    background-color: tomato;
     color: #fff;
-    border-radius: 0px;
 }
 
-.active{
-    background-color: #a12c2f !important;
+.active {
+    background-color: tomato !important;
     color: #fff !important;
-    border-radius: 0px !important;
+    border-radius: 50px !important;
 }
 
-.form{
+.form {
     width: 100%;
-    padding: 50px;
-    background-color: #fff;
+    padding: 50px 10px 50px 10px;
 }
 
-label{
+label {
     font-size: 16px;
-    color: #a12c2f;
+    color: tomato;
     font-weight: 500;
 }
-.fa-caret-down{
+
+.fa-caret-down {
     position: absolute;
     bottom: -23px;
     font-size: 35px;
-    color: #a12c2f;
-    left: 120px;
+    color: tomato;
+    left: 80px;
 
+}
+
+.block-title {
+    color: tomato;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+input[name="inlineRadioOptions"]:checked .btn-gender {
+    background-color: tomato !important;
+    color: #fff !important;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: tomato !important;
+    --bs-btn-border-color: tomato !important;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: tomato !important;
+    --bs-btn-hover-border-color: tomato !important;
+    --bs-btn-focus-shadow-rgb: 13, 110, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: tomato !important;
+    --bs-btn-active-border-color: tomato !important;
+    --bs-btn-active-shadow: inset 0 3px 5pxrgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: tomato !important;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: tomato !important;
+    --bs-btn-focus-box-shadow: tomato !important;
+    --bs-gradient: none;
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: tomato !important;
+    --bs-btn-border-color: tomato !important;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: tomato;
+    --bs-btn-hover-border-color: tomato;
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: tomato;
+    --bs-btn-active-border-color: tomato;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: tomato !important;
+    --bs-btn-disabled-border-color: tomato !important;
+}
+
+.btn-check:active+.btn,
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:active {
+    color: var(--bs-btn-active-color);
+    background-color: var(--bs-btn-active-bg);
+    border-color: var(--bs-btn-active-border-color);
+}
+
+.btn-check:active+.btn:focus,
+.btn-check:checked+.btn:focus,
+.btn.active:focus,
+.btn.show:focus,
+.btn:active:focus {
+    box-shadow: var(--bs-btn-focus-box-shadow);
+}
+
+.form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: tomato !important;
+    outline: 0;
+    box-shadow: 0 0 0 .25 #fff !important;
+}
+.form-select:focus {
+    border-color: tomato !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25) !important;
+}
+#date:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: tomato !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25) !important;
+}
+#date{
+border-radius: 1.375rem !important;
+}
+
+.user-input{
+    position: relative;
+    margin-top: 10px;
+}
+
+.user-input input{
+    width: 100%;
+    padding: 6px 0;
+    /* background-color: rgb(238, 238, 238); */
+    font-size: 16px;
+    font-weight: 500;
+    color: gray;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid gray;
+}
+.user-input label{
+    position:  absolute;
+    top: 0px ;
+    left: 0px;
+    padding: 6px 0px;
+    font-size: 16px;
+    color: tomato;
+    pointer-events: none;
+    transition: .2s;
+}
+.user-input input::placeholder{
+    color: transparent;
+}
+
+.user-input input:focus~label,
+.user-input input:not(:placeholder-shown)+label{
+    top: -20px;
+    left: 0px;
+    color: tomato;
+    font-size: 16px;
+}
+.user-input input:focus,
+.user-input input:not(:placeholder-shown){
+    border-bottom: 1px solid tomato;
+}
+.form-select{
+    border-radius: 1.2rem !important;
+}
+.btn-sm{
+    border-radius: 15px !important;
+}
+
+@media (min-width: 576px){
+    .fa-caret-down {
+        position: absolute;
+        bottom: -23px;
+        font-size: 35px;
+        color: tomato;
+        left: 28px;
+        opacity: 0;
+    }
+    .nav .nav-link {
+        position: relative;
+        padding: 15px 0px !important;
+        color: tomato;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 50px;
+        margin: 2px 2px;
+        border: 2px solid tomato;
+        box-shadow: 5px 5px 10px rgb(179, 179, 179);
+    }
+}
+
+@media (min-width: 768px){
+    .fa-caret-down {
+        position: absolute;
+        bottom: -23px;
+        font-size: 35px;
+        color: tomato;
+        left: 40px;
+        opacity: 1;
+    }
+    .nav .nav-link {
+        position: relative;
+        padding: 15px 10px !important;
+        color: tomato;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 50px;
+        margin: 2px 2px;
+        border: 2px solid tomato;
+        box-shadow: 5px 5px 10px rgb(179, 179, 179);
+    }
+}
+
+@media (min-width: 992px){
+    .fa-caret-down {
+        position: absolute;
+        bottom: -23px;
+        font-size: 35px;
+        color: tomato;
+        left: 65px; 
+        opacity: 1;   
+    }
+    .nav .nav-link {
+        position: relative;
+        padding: 15px 0px !important;
+        color: tomato;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 50px;
+        margin: 2px 2px;
+        border: 2px solid tomato;
+        box-shadow: 5px 5px 10px rgb(179, 179, 179);
+    }
+}
+
+@media (min-width: 1200px){
+    .fa-caret-down {
+        position: absolute;
+        bottom: -23px;
+        font-size: 35px;
+        color: tomato;
+        left: 80px; 
+        opacity: 1;   
+    }
+    .nav .nav-link {
+        position: relative;
+        padding: 15px 0px !important;
+        color: tomato;
+        font-size: 18px;
+        font-weight: 500;
+        border-radius: 50px;
+        margin: 2px 2px;
+        border: 2px solid tomato;
+        box-shadow: 5px 5px 10px rgb(179, 179, 179);
+    }
 }
