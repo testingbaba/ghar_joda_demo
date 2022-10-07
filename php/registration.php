@@ -54,9 +54,7 @@
            died('Error found with the form you submitted.');
     }
 
-
     if($pass1==$pass2){
-
       $sel_query_email = "SELECT * FROM `user_reg` WHERE user_email='" . $email . "'";
       $sel_query_phone = "SELECT * FROM `user_reg` WHERE user_contact='" . $phone . "'";
       $results_1 = mysqli_query($con, $sel_query_email);
@@ -85,17 +83,17 @@
         $mail->isSMTP();                                            //Send using SMTP
         $mail->Host       = 'testingbaba.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'kinshuk.maity@testingbaba.com';                     //SMTP username
-        $mail->Password   = 'Maity@123';                             //SMTP password
+        $mail->Username   = 'ritik.jain@testingbaba.com';                     //SMTP username
+        $mail->Password   = 'Jain@123';                             //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
         $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
         $mail->IsHTML(true);
-        $mail->From = "kinshuk.maity@testingbaba.com";
+        $mail->From = "ritik.jain@testingbaba.com";
         $mail->FromName = "Ghar Joda  - OTP Registration ";
 
 
         //Recipients
-        // $mail->setFrom('kinshuk.maity@testingbaba.com', 'Ghar Joda  - Forgot Password');
+        // $mail->setFrom('ritik.jain@testingbaba.com', 'Ghar Joda  - Forgot Password');
                             
 
         $mail->Subject = $subject;
@@ -129,14 +127,12 @@
         }// else
        }
     }
-
     else{
       echo '<script language="javaScript">
             alert("Password not matched !");
             window.location.href="../index.html?id=1";
           </script>';
     }
-
  
 ?>
 
