@@ -27,14 +27,17 @@ if ($num_record) {
 }
 $email = substr($email, 0, 4) . "xxxxxxx" . substr($email, strlen($email) - 10);
 
-$q = "SELECT user_profile_info.user_profile_name as name, user_profile_info.user_profile_gender as gender, 
-user_profile_info.user_profile_dob as user_dob, user_profile_info.user_profile_phone as phone_number, 
-user_profile_photo.user_profile_photo_1 as photo_1, user_profile_photo.user_profile_photo_2 as photo_2, 
-user_profile_photo.user_profile_photo_3 as photo_3, user_profile_photo.user_profile_photo_4 as photo_4
-FROM user_profile_info
-LEFT JOIN user_profile_photo
-ON user_profile_info.user_profile_email=user_profile_photo.user_profile_photo_email
-WHERE user_profile_info.user_profile_email!='{$_SESSION['email']}'";
+$q = "SELECT user_profile_info.user_profile_name as name, 
+             user_profile_info.user_profile_gender as gender, 
+             user_profile_info.user_profile_dob as user_dob, 
+             user_profile_info.user_profile_phone as phone_number, 
+             user_profile_photo.user_profile_photo_1 as photo_1, 
+             user_profile_photo.user_profile_photo_2 as photo_2, 
+             user_profile_photo.user_profile_photo_3 as photo_3, 
+             user_profile_photo.user_profile_photo_4 as photo_4
+        FROM user_profile_info LEFT JOIN user_profile_photo
+        ON user_profile_info.user_profile_email=user_profile_photo.user_profile_photo_email
+        WHERE user_profile_info.user_profile_email!='{$_SESSION['email']}'";
 $result = mysqli_query($con, $q) or die("Query failed : " . mysqli_error($con));
 $allarr = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -158,6 +161,7 @@ $allarr = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
         Tip 2: you can also add an image using data-image tag
     -->
+       <!-- side bar  -->
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="dashboard.html" class="simple-text">
@@ -583,7 +587,7 @@ $allarr = mysqli_fetch_all($result, MYSQLI_ASSOC);
                             <script>
                                 document.write(new Date().getFullYear())
                             </script>
-                            <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                            <a href="http://testingbaba.com/">Ghar Joda</a>, made with testingbaba
                         </p>
                     </nav>
                 </div>
