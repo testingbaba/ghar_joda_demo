@@ -70,7 +70,7 @@
 
                     <h3>You are registered successfully.</h3>
 
-                    <p class='link'>Click here to <a href='../index.html'>Login</a></p>
+                    <p class='link'>Click here to <a href='../index.html?id=1'>Login</a></p>
                     </div>";
                     } 
                     else {
@@ -103,17 +103,17 @@
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'testingbaba.com';                     //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'kinshuk.maity@testingbaba.com';                     //SMTP username
-            $mail->Password   = 'Maity@123';                             //SMTP password
+            $mail->Username   = 'ritik.jain@testingbaba.com';                     //SMTP username
+            $mail->Password   = 'Jain@123';                             //SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
             $mail->IsHTML(true);
-            $mail->From = "kinshuk.maity@testingbaba.com";
+            $mail->From = "ritik.jain@testingbaba.com";
             $mail->FromName = "Ghar Joda  - OTP Registration ";
     
     
             //Recipients
-            // $mail->setFrom('kinshuk.maity@testingbaba.com', 'Ghar Joda  - Forgot Password');
+            // $mail->setFrom('ritik.jain@testingbaba.com', 'Ghar Joda  - Forgot Password');
                                 
     
             $mail->Subject = $subject;

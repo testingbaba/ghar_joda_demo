@@ -74,14 +74,14 @@ try {
     $mail->isSMTP();                                            //Send using SMTP
     $mail->Host       = 'testingbaba.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'info@testingbaba.com';                     //SMTP username
-    $mail->Password   = 'Testing@120';                               //SMTP password
+    $mail->Username   = 'ritik.jain@testingbaba.com';                     //SMTP username
+    $mail->Password   = 'Jain@123';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('info@testingbaba.com', 'Ghar Joda - Contact Us');
-    $mail->addAddress('info@testingbaba.com');     //Add a recipient
+    $mail->setFrom('ritik.jain@testingbaba.com', 'Ghar Joda - Contact Us');
+    $mail->addAddress('ritik.jain@testingbaba.com');     //Add a recipient
   //  $mail->addAddress('ellen@example.com');               //Name is optional
   //  $mail->addReplyTo('info@example.com', 'Information');
   //  $mail->addCC('cc@example.com');

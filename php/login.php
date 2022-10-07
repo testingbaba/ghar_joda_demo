@@ -35,17 +35,30 @@
 
    if (isset($_REQUEST['email'])) {
 
-     //Check user is exist in the database
+     //Check user is exist in the database !
      $query = "SELECT * FROM `user_reg` WHERE user_email='$email' AND password='" .md5($pass). "'";
-
      //$result = mysqli_query($con, $query) or die(mysql_error());
      $result = mysqli_query($con, $query);
      $rows = mysqli_num_rows($result);
+     $data=mysqli_fetch_assoc($result);
+
+     //Check user is complite the registration or not!
+     $query2="SELECT * FROM `user_profile_info` WHERE user_profile_email='$email'";
+     $result_complite = mysqli_query($con, $query2);
+     $rows2=mysqli_num_rows($result_complite);
 
      if ($rows == 1) {
-         $_SESSION['email'] = $email;
-         // Redirect to user dashboard page
-         header("Location: dashboard.php");
+
+        if($rows2==1){
+            $_SESSION['email'] = $email;
+            // Redirect to user dashboard page
+            header("Location: dashboard.php");
+        }else{
+            $_SESSION['email'] = $email;
+            $_SESSION['mobile_number']=$data['user_contact'];
+            // Redirect to user dashboard page
+            header("Location: profile_registration.php");
+        }
      } else {
          echo 'Session is running';
         header("Location: ../index.html?id=1");
