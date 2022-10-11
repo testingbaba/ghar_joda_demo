@@ -1,8 +1,17 @@
 <?php
+
 //include auth_session.php file on all user panel pages
+
 include("auth_session.php");
+if (time() > $_SESSION['expire']) {
+    if (session_destroy()) {
+        // Redirecting To Home Page
+        header("Location: ../index.html");
+    }
+}
 include("../database/conn_db.php");
 $email = $_SESSION['email'];
+
 // ============ for address verify table ===========
 $q = "SELECT * FROM user_profile_address_verify WHERE user_profile_address_verify_email='$email' ";
 $result = mysqli_query($con, $q);
@@ -14,30 +23,23 @@ if ($num_record) {
     $aadhar_number = "XXXXXXXXXXXX";
 }
 
-// ====================== for profile photo table ================
-$q = "SELECT * FROM user_profile_photo WHERE user_profile_photo_email='$email' ";
-$result = mysqli_query($con, $q);
-$num_record = mysqli_num_rows($result);
-if ($num_record) {
-    $data_photo = mysqli_fetch_array($result, MYSQLI_NUM);
-    $profile_image = $data_photo[1];
-    $profile_image = base64_encode($profile_image);
-} else {
-    $profile_image = "./tenor1.gif";
-}
+
 $email = substr($email, 0, 4) . "xxxxxxx" . substr($email, strlen($email) - 10);
 
-$q = "SELECT user_profile_info.user_profile_name as name, 
-             user_profile_info.user_profile_gender as gender, 
-             user_profile_info.user_profile_dob as user_dob, 
-             user_profile_info.user_profile_phone as phone_number, 
-             user_profile_photo.user_profile_photo_1 as photo_1, 
-             user_profile_photo.user_profile_photo_2 as photo_2, 
-             user_profile_photo.user_profile_photo_3 as photo_3, 
-             user_profile_photo.user_profile_photo_4 as photo_4
-        FROM user_profile_info LEFT JOIN user_profile_photo
-        ON user_profile_info.user_profile_email=user_profile_photo.user_profile_photo_email
-        WHERE user_profile_info.user_profile_email!='{$_SESSION['email']}'";
+$q = "SELECT user_profile_gender as gender FROM gharjoda_db.user_profile_info WHERE user_profile_email='{$_SESSION['email']}'";
+$result = mysqli_query($con, $q);
+$data = mysqli_fetch_assoc($result);
+
+$q = "SELECT user_profile_info.user_profile_name as name, user_profile_info.user_profile_gender as gender, 
+user_profile_info.user_profile_dob as user_dob, user_profile_info.user_profile_phone as phone_number, 
+user_profile_photo.user_profile_photo_1 as photo_1, user_profile_photo.user_profile_photo_2 as photo_2, 
+user_profile_photo.user_profile_photo_3 as photo_3, user_profile_photo.user_profile_photo_4 as photo_4
+FROM user_profile_info
+LEFT JOIN user_profile_photo
+ON user_profile_info.user_profile_email=user_profile_photo.user_profile_photo_email
+WHERE user_profile_info.user_profile_email!='{$_SESSION['email']}' and 
+user_profile_info.user_profile_gender!='{$data['gender']}'";
+
 $result = mysqli_query($con, $q) or die("Query failed : " . mysqli_error($con));
 $allarr = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -77,7 +79,7 @@ $allarr = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <body>
 
     <!-- Modal for mobile number verification -->
-    <div class="outer">
+    <div class="outer d-none">
         <div class="inner bg-light">
             <p class="heading ">
                 Mobile Number Verification
@@ -164,13 +166,13 @@ $allarr = mysqli_fetch_all($result, MYSQLI_ASSOC);
        <!-- side bar  -->
             <div class="sidebar-wrapper">
                 <div class="logo">
-                    <a href="dashboard.html" class="simple-text">
+                    <a href="#" class="simple-text">
                         Ghar-Joda
                     </a>
                 </div>
                 <ul class="nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="dashboard.html">
+                        <a class="nav-link" href="#">
                             <i class="nc-icon nc-chart-pie-35"></i>
                             <p>Dashboard</p>
                         </a>
@@ -368,8 +370,8 @@ $allarr = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                 <div class="postcard__subtitle small">
                                     <time datetime="2020-05-25 12:00:00">
                                         <i class="fas fa-calendar-alt mr-2"></i>
-                                        <?= $element['gender'] ?> & Age : 
-                                        <?=date_diff(date_create($element['user_dob']), date_create('today'))->y?>
+                                        <?= $element['gender'] ?> & Age :
+                                        <?= date_diff(date_create($element['user_dob']), date_create('today'))->y ?>
                                     </time>
                                 </div>
                                 <div class="postcard__bar"></div>
@@ -705,51 +707,60 @@ $allarr = mysqli_fetch_all($result, MYSQLI_ASSOC);
     $(document).ready(function() {
 
         // =========== mobile number verify section script =====================
-        var otp;
-        $('.skip-btn').click(function() {
-            $('.outer').addClass("d-none")
-            if (!(<?= $num_record ?> == 1)) {
-                $('.outer_img').removeClass("d-none");
-            }
-        })
-
-        $('.send_otp').click(function(e) {
-            e.preventDefault();
-            let number = $('#number').val()
-            if (number.toString().length == 10 && parseInt(number) > 0 && number[0] >= 7) {
-                $('.get_number').addClass("d-none")
-                $('.verify_otp').removeClass("d-none")
-                otp = Math.ceil(Math.random() * 1000000);
-                alert("your otp is : " + otp);
-            } else {
-                alert("invalid mobile number")
-            }
-        })
-
-        $('.resend_otp').click(function(e) {
-            e.preventDefault();
-            otp = Math.ceil(Math.random() * 1000000);
-            alert("your otp is : " + otp);
-        })
-
-        $('.number_verify').click(function(e) {
-            e.preventDefault();
-            let user_otp = $('#otp').val();
-            if (parseInt(otp) == parseInt(user_otp)) {
-                alert("Number verify successfully")
+        if (<?= $_SESSION['modal'] ?>) {
+            $('.outer').removeClass("d-none")
+            var otp;
+            $('.skip-btn').click(function() {
                 $('.outer').addClass("d-none")
                 if (!(<?= $num_record ?> == 1)) {
                     $('.outer_img').removeClass("d-none");
                 }
-            } else {
-                alert("Invalid otp")
-            }
-        })
+                <?php
+                $_SESSION['modal'] = false;
+                ?>
+            })
 
-        $('.btn-change').on("click", function() {
-            $('.verify_otp').addClass("d-none")
-            $('.get_number').removeClass("d-none")
-        })
+            $('.send_otp').click(function(e) {
+                e.preventDefault();
+                let number = $('#number').val()
+                if (number.toString().length == 10 && parseInt(number) > 0 && number[0] >= 7) {
+                    $('.get_number').addClass("d-none")
+                    $('.verify_otp').removeClass("d-none")
+                    otp = Math.ceil(Math.random() * 1000000);
+                    alert("your otp is : " + otp);
+                } else {
+                    alert("invalid mobile number")
+                }
+            })
+
+            $('.resend_otp').click(function(e) {
+                e.preventDefault();
+                otp = Math.ceil(Math.random() * 1000000);
+                alert("your otp is : " + otp);
+            })
+
+            $('.number_verify').click(function(e) {
+                e.preventDefault();
+                let user_otp = $('#otp').val();
+                if (parseInt(otp) == parseInt(user_otp)) {
+                    alert("Number verify successfully")
+                    $('.outer').addClass("d-none")
+                    if (!(<?= $num_record ?> == 1)) {
+                        $('.outer_img').removeClass("d-none");
+                    }
+                    <?php
+                    $_SESSION['modal'] = false;
+                    ?>
+                } else {
+                    alert("Invalid otp")
+                }
+            })
+
+            $('.btn-change').on("click", function() {
+                $('.verify_otp').addClass("d-none")
+                $('.get_number').removeClass("d-none")
+            })
+        }
 
     })
 

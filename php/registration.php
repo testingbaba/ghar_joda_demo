@@ -110,16 +110,17 @@
             $otp_send_result = mysqli_query($con, $query);
             // $reg_result=mysqli_query($con, $query_reg);
             //header("Location: http://localhost/ghar_joda/index.html");
-            if ($otp_send_result ) {//3
+            if ($otp_send_result ) {
                  $_SESSION['name'] =$name;
                  $_SESSION['email'] =$email;
                  $_SESSION['phone'] =$phone;
                  $_SESSION['pass1'] =$pass1;
                  $_SESSION['pass2'] =$pass2;
-                 $_SESSION['otp'] =$otp;                
+                 $_SESSION['otp'] =$otp;  
+
                 header("Location: otp_email.php");  
 
-            }  //if
+            }
             else{ 
                 echo "Mail not send";
                 //header("Location: http://localhost/ghar_joda/index.html");

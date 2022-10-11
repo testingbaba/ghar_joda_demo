@@ -1,6 +1,7 @@
 <?php
 
 include("auth_session.php");
+// include("../database/conn_db.php");
 
 // echo "<br><pre>";
 // print_r($_FILES);
@@ -46,6 +47,19 @@ if (isset($_POST['send_data'])) {
             $photo_details = ['profile_photo_1' => file_get_contents($file_temp_path2), 'photo_email' => $email];
             $conform2 = $stmt2->execute($photo_details);
 
+
+
+        // // ======================= other methods =======================
+
+        // if ($file_size1 <= 2097152 && $file_size2 <= 2097152) {
+
+        //     $sql1 = "INSERT INTO user_profile_address_verify (user_profile_address_verify_aadhar_number , user_profile_address_verify_aadhar_img , user_profile_address_verify_email) VALUES ($aadhar_number, '" . file_get_contents($file_temp_path1) . "', '$email')";
+        //     $conform1 = mysqli_query($con, $sql1) or die("failed query1 : " . mysqli_error($con));
+
+        //     $sql2 = "INSERT INTO user_profile_photo (user_profile_photo_1 , user_profile_photo_email) VALUES ('" . file_get_contents($file_temp_path2) . "', $email)";
+        //     $conform2 = mysqli_query($con, $sql2) or die("failed query2 : " . mysqli_error($con));
+
+
             if ($conform1 && $conform2) {
                 echo '<script>
                         alert("Record Submited !")
@@ -70,5 +84,3 @@ if (isset($_POST['send_data'])) {
             </script>';
     }
 }
-
-?>
