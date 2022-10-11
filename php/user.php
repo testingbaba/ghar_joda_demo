@@ -71,7 +71,7 @@ $arrdata = mysqli_fetch_assoc($result);
                         </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="./user.html">
+                        <a class="nav-link" href="#">
                             <i class="nc-icon nc-circle-09"></i>
                             <p>User Profile</p>
                         </a>
