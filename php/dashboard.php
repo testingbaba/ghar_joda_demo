@@ -39,6 +39,7 @@ LEFT JOIN user_profile_photo
 ON user_profile_info.user_profile_email=user_profile_photo.user_profile_photo_email
 WHERE user_profile_info.user_profile_email!='{$_SESSION['email']}' and 
 user_profile_info.user_profile_gender!='{$data['gender']}'";
+
 $result = mysqli_query($con, $q) or die("Query failed : " . mysqli_error($con));
 $allarr = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -162,6 +163,7 @@ $allarr = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
         Tip 2: you can also add an image using data-image tag
     -->
+       <!-- side bar  -->
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="#" class="simple-text">
@@ -587,7 +589,7 @@ $allarr = mysqli_fetch_all($result, MYSQLI_ASSOC);
                             <script>
                                 document.write(new Date().getFullYear())
                             </script>
-                            <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                            <a href="http://testingbaba.com/">Ghar Joda</a>, made with testingbaba
                         </p>
                     </nav>
                 </div>
